@@ -1,7 +1,7 @@
 import SpecialistsSection from "../components/SpecialistsSection";
 import SecurityBulletinSection from "../components/SecurityBulletinSection";
 import { Link } from 'react-router-dom';
-import SOCSection from "../components/SOCSection";
+import SOCSection from "../components/SOCSectionTemp";
 import {
   ChevronRight,
   ShieldCheck,
