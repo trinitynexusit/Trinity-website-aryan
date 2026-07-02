@@ -7,33 +7,26 @@ const EndpointSecurity = () => {
     <ServiceTabs />
 
     {/* Hero Section */}
-    <section className="relative overflow-hidden min-h-screen flex items-center border-b border-[#00ff99]/10">
+    <section className="relative overflow-hidden min-h-screen flex items-center border-b border-[#00ff99]/10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
 
   {/* Grid Background */}
   <div
-    className="absolute inset-0 opacity-[0.06]"
-    style={{
-      backgroundImage:
-        "linear-gradient(rgba(0,255,153,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,153,.08) 1px, transparent 1px)",
-      backgroundSize: "60px 60px",
-    }}
-  />
+  className="absolute inset-0 opacity-20"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+    `,
+    backgroundSize: "80px 80px",
+  }}
+/>
 
   {/* Glow */}
-  <div className="absolute top-20 left-1/3 w-[700px] h-[700px] bg-[#00ff99]/10 rounded-full blur-[180px]" />
+  <div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
 
   <div className="relative max-w-7xl mx-auto px-6 py-16 w-full">
 
-    {/* Breadcrumb */}
-    <div className="flex items-center gap-3 text-gray-400 text-sm mb-8">
-      <span>Home</span>
-      <span>/</span>
-      <span>Services</span>
-      <span>/</span>
-      <span className="text-white font-medium">
-        Endpoint & Device Security
-      </span>
-    </div>
+    
 
     {/* Badge */}
     <div className="inline-flex items-center px-5 py-2 rounded-md border border-[#00ff99]/40 bg-[#061321] text-[#00ff99] font-mono tracking-[3px] text-[#00ff99] uppercase mb-8">
@@ -122,7 +115,7 @@ const EndpointSecurity = () => {
 </section>
 
 {/* Overview Section */}
-<section className="py-16 border-t border-[#00ff99]/10">
+<section className="py-16 border-t border-[#00ff99]/10 bg-[#081827]">
   <div className="max-w-7xl mx-auto px-6">
 
     <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -253,7 +246,20 @@ const EndpointSecurity = () => {
 
   </div>
   {/* Delivery Approach */}
-<section className="py-16 border-t border-[#00ff99]/10">
+<section className="relative overflow-hidden py-16 border-t border-[#00ff99]/10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+  <div
+  className="absolute inset-0 opacity-20"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+    `,
+    backgroundSize: "80px 80px",
+  }}
+></div>
+
+<div className="relative z-10 max-w-7xl mx-auto px-6"></div>
+  
   <div className="max-w-7xl mx-auto px-6">
 
     <p className="text-[#00ff99] text-sm font-mono tracking-[5px] uppercase mb-5">
@@ -370,7 +376,7 @@ const EndpointSecurity = () => {
 
   </div>
 </section>
-<section className="pt-14 pb-20 bg-[#030d18]">
+<section className="py-16 bg-[#0b1f35]">
   <div className="max-w-7xl mx-auto px-6">
 
     {/* Heading */}
@@ -689,8 +695,19 @@ const EndpointSecurity = () => {
 </div>
 {/* Technology Stack & What You Gain */}
 
-<section className="bg-[#071220] py-16">
-  <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
+<section className="relative overflow-hidden py-16 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+  <div
+  className="absolute inset-0 opacity-20"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+    `,
+    backgroundSize: "80px 80px",
+  }}
+></div>
+
+<div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
 
     {/* Left Side */}
 
@@ -772,10 +789,20 @@ const EndpointSecurity = () => {
   </div>
 </section>
 {/* CTA SECTION */}
-<section className="py-16 px-6 bg-[#050d18]">
-  <div className="max-w-6xl mx-auto">
+<section className="relative overflow-hidden py-16 px-6 bg-[#050d18]">
+    {/* Dark Glow */}
+<div className="absolute inset-0 bg-gradient-to-br from-[#07111d] via-[#081827] to-[#050d18]" />
 
-    <div className="rounded-[24px] border border-cyan-900/60 bg-gradient-to-b from-[#11233b] to-[#0c1828] py-16 px-8 text-center">
+{/* Optional subtle overlay */}
+<div className="absolute inset-0 bg-black/20" />
+  <div className="relative z-10 max-w-6xl mx-auto">
+
+    <div className="rounded-[24px]
+border border-[#00ff99]/15
+bg-[#081827]
+py-16
+px-8
+text-center">
 
       <p className="uppercase tracking-[6px]text-[#8aa0ba] text-sm mb-8">
         D02 • ENDPOINT & DEVICE SECURITY

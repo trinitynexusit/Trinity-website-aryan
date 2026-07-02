@@ -130,7 +130,7 @@ export default function NetworkSecurity() {
 <>
     <ServiceTabs />
 
-    <section className="relative overflow-hidden bg-[#07131f] border-b border-cyan-900/20">
+    <section className="relative overflow-hidden bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345] border-b border-cyan-900/20">
 
   {/* Grid Background */}
   <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,170,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,170,0.05)_1px,transparent_1px)] bg-[size:62px_62px]" />
@@ -346,7 +346,15 @@ export default function NetworkSecurity() {
 </section>
 {/* ================= OUR STRENGTHS ================= */}
 
-<section className="bg-[#08121f] py-16 border-b border-cyan-900/20">
+<section
+  className="py-20"
+  style={{
+    background: `
+      radial-gradient(circle at top center, rgba(37,99,235,0.18), transparent 55%),
+      linear-gradient(180deg, #173867 0%, #1b4277 35%, #214b84 65%, #234f89 100%)
+    `,
+  }}
+>
 
   <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
@@ -469,7 +477,15 @@ export default function NetworkSecurity() {
 
   </div>
 </section>
-<section className="py-16 bg-[#08111d] border-b border-cyan-900/20">
+<section
+  className="relative py-20 overflow-hidden"
+  style={{
+    background: `
+      radial-gradient(circle at top center, rgba(37,99,235,0.18), transparent 55%),
+      linear-gradient(180deg, #173867 0%, #1b4277 35%, #214b84 65%, #234f89 100%)
+    `,
+  }}
+>
 
   <div className="max-w-6xl mx-auto px-6">
 
@@ -617,9 +633,30 @@ export default function NetworkSecurity() {
 
 {/* ================= CTA SECTION ================= */}
 
-<section className="bg-[#08121f] py-14">
+<section
+  className="relative py-20 overflow-hidden"
+  style={{
+    background: `
+      radial-gradient(circle at top center, rgba(37,99,235,0.18), transparent 55%),
+      linear-gradient(180deg, #173867 0%, #1b4277 35%, #214b84 65%, #234f89 100%)
+    `,
+  }}
+>
 
-  <div className="max-w-5xl mx-auto px-6">
+  <div className="absolute inset-0 opacity-10 pointer-events-none">
+  <div
+    className="w-full h-full"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)
+      `,
+      backgroundSize: "48px 48px",
+    }}
+  />
+</div>
+
+<div className="relative z-10">
 
     <div className="rounded-3xl border border-cyan-900/30 bg-[#0b1627] px-8 py-12 text-center">
 

@@ -91,10 +91,11 @@ export default function Home() {
             backgroundSize: '80px 80px',
         }}/>
         
-        <div className="absolute top-[10%] left-[20%] w-[1400px] h-[1400px] bg-[#0055ff]/30 rounded-full blur-[350px] pointer-events-none" />
-<div className="absolute top-[15%] left-[30%] w-[1000px] h-[1000px] bg-[#0055ff]/20 rounded-full blur-[300px] pointer-events-none" />
+        <div className="absolute top-[5%] left-[15%] w-[1600px] h-[1600px] bg-[#3b82f6]/45 rounded-full blur-[320px] pointer-events-none" />
 
-<div className="absolute top-[25%] right-[20%] w-[700px] h-[700px] bg-[#00aaff]/10 rounded-full blur-[250px] pointer-events-none" />
+<div className="absolute top-[10%] left-[35%] w-[1200px] h-[1200px] bg-[#2563eb]/35 rounded-full blur-[280px] pointer-events-none" />
+
+<div className="absolute top-[20%] right-[10%] w-[900px] h-[900px] bg-[#38bdf8]/25 rounded-full blur-[220px] pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -663,7 +664,7 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
         to="/assessment"
         className="px-6 py-2 rounded-lg bg-[#00ff99] text-black font-bold text-xl"
       >
-        ⚡ Get Free Assessment
+      Get Free Assessment
       </Link>
 
       <a

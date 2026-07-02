@@ -5,10 +5,26 @@ export default function NetworkSecurity() {
     <ServiceTabs />
 
     {/* Hero Section */}
-    <section className="relative overflow-hidden min-h-screen flex items-center border-b border-[#00ff99]/10">
+    {/* Hero Section */}
+<section className="relative overflow-hidden min-h-screen flex items-center border-b border-[#00ff99]/10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
 
-  <div className="max-w-6xl mx-auto px-6 py-16">
+  {/* Grid Background */}
+  <div
+    className="absolute inset-0 opacity-20"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+      `,
+      backgroundSize: "80px 80px",
+    }}
+  />
 
+  {/* Blue Glow */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
+
+  {/* Content */}
+  <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 w-full">
     {/* Breadcrumb */}
     <div className="text-sm text-gray-400 mb-5">
       Home <span className="mx-2">/</span>

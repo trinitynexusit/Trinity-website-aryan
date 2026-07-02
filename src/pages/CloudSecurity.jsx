@@ -5,7 +5,25 @@ export default function CloudSecurity() {
     <ServiceTabs />
 
     {/* Hero Section */}
-    <section className="relative overflow-hidden min-h-screen flex items-center border-b border-[#00ff99]/10">
+    <section className="relative overflow-hidden min-h-screen flex items-center border-b border-[#00ff99]/10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+
+  {/* Grid Background */}
+  <div
+    className="absolute inset-0 opacity-20"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+      `,
+      backgroundSize: "80px 80px",
+    }}
+  />
+
+  {/* Blue Glow */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
+
+  {/* Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-14">
   <div className="max-w-7xl mx-auto px-6 lg:px-8 py-14">
 
     <p className="text-gray-400 text-sm mb-6">
@@ -76,7 +94,7 @@ export default function CloudSecurity() {
       <button className="px-8 py-4 rounded-lg border border-[#00ff99]/30 text-[#00ff99] hover:bg-[#00ff99]/10 transition">
         ← All Domains
       </button>
-
+    </div>
     </div>
 {/* ================= OVERVIEW SECTION ================= */}
 

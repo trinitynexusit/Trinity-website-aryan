@@ -5,10 +5,21 @@ return (
     <ServiceTabs />
 
     {/* Hero Section */}
-    <section className="relative overflow-hidden min-h-screen flex items-center border-b border-[#00ff99]/10">
-  <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,170,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,170,0.05)_1px,transparent_1px)] bg-[size:62px_62px]" />
+    <section className="relative overflow-hidden py-20 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+  <div
+  className="absolute inset-0 opacity-20"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+    `,
+    backgroundSize: "80px 80px",
+  }}
+/>
 
-  <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
+<div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
+
+  <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
     {/* Breadcrumb */}
     <div className="flex items-center gap-3 text-sm text-gray-400 mb-8">
@@ -94,7 +105,8 @@ return (
 
     </div>
 {/* Overview Section */}
-<section className="bg-[#07131f] py-16 border-t border-cyan-900/20">
+
+<section className="mt-12 bg-[#07131f] py-16 border-t border-cyan-900/20">
   <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
     <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -197,8 +209,9 @@ return (
 
     </div>
 {/* Our Strengths */}
-<section className="bg-[#07131f] py-16">
+<section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345] py-16">
   <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="relative z-10 max-w-full px-6 lg:px-8"></div>
 
     {/* Heading */}
     <div className="text-center mb-12">

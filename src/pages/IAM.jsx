@@ -5,8 +5,22 @@ export default function NetworkSecurity() {
     <ServiceTabs />
 
     {/* Hero Section */}
-    <section className="relative overflow-hidden min-h-screen flex items-center border-b border-[#00ff99]/10">
-  <div className="max-w-7xl mx-auto px-6 py-20">
+    <section className="relative overflow-hidden min-h-screen flex items-center border-b border-[#00ff99]/10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+    {/* Grid Background */}
+<div
+  className="absolute inset-0 opacity-20"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+    `,
+    backgroundSize: "80px 80px",
+  }}
+/>
+
+{/* Blue Glow */}
+<div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
+  <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
 
     {/* Breadcrumb */}
 
@@ -94,7 +108,9 @@ export default function NetworkSecurity() {
       </button>
 
     </div>
-<section className="bg-[#081522] py-14">
+
+
+<section className="bg-[#081522] py-14 mt-16">
   <div className="max-w-7xl mx-auto px-6">
 
     <div className="grid lg:grid-cols-2 gap-14 items-start">
@@ -219,8 +235,24 @@ export default function NetworkSecurity() {
 
   </div>
 </section>
-<section className="bg-[#081522] py-14">
-  <div className="max-w-7xl mx-auto px-6">
+<section className="relative overflow-hidden py-14 mt-16 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+
+  {/* Grid Background */}
+  <div
+    className="absolute inset-0 opacity-20"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+      `,
+      backgroundSize: "  80px",
+    }}
+  />
+
+  {/* Blue Glow */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
+
+  <div className="relative z-10 max-w-7xl mx-auto px-6">
 
     <div className="text-center mb-14">
       <p className="text-emerald-400 uppercase tracking-[5px] text-xs mb-3">
@@ -475,8 +507,24 @@ export default function NetworkSecurity() {
 
   </div>
 </section>
-<section className="bg-[#081522] py-14">
-  <div className="max-w-7xl mx-auto px-6">
+<section className="relative overflow-hidden py-14 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+
+  {/* Grid Background */}
+  <div
+    className="absolute inset-0 opacity-20"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+      `,
+      backgroundSize: "80px 80px",
+    }}
+  />
+
+  {/* Blue Glow */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
+
+  <div className="relative z-10 max-w-7xl mx-auto px-6">
 
     {/* Heading */}
 
@@ -868,8 +916,24 @@ Review password policy against NIST SP 800-63B. Length over complexity, breached
 
   </div>
 </section>
-<section className="py-14 bg-[#081522]">
-  <div className="max-w-6xl mx-auto px-6">
+<section className="relative overflow-hidden py-14 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+
+  {/* Grid Background */}
+  <div
+    className="absolute inset-0 opacity-20"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+      `,
+      backgroundSize: "80px 80px",
+    }}
+  />
+
+  {/* Blue Glow */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
+
+  <div className="relative z-10 max-w-6xl mx-auto px-6">
 
     <div className="rounded-3xl border border-cyan-900 bg-gradient-to-b from-[#0d1b2f] to-[#081522] py-16 px-8 text-center">
 

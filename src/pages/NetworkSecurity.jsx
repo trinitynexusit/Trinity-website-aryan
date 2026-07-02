@@ -120,7 +120,7 @@ export default function NetworkSecurity() {
   });
 }, []);
  return (
-  <div className="min-h-screen bg-[#061321] text-white">
+  <div className="min-h-screen bg-gradient-to-b from-[#061321] via-[#0b2345] to-[#061321] text-white">
 
     <ServiceTabs />
 
@@ -303,7 +303,8 @@ export default function NetworkSecurity() {
 </section>
 {/* OUR STRENGTHS */}
 
-<section className="max-w-7xl mx-auto px-8 py-16">
+<section className="w-full py-16 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+  <div className="max-w-7xl mx-auto px-8">
   <p className="text-[#00ff99] uppercase tracking-[4px] text-center">
     // WHY CHOOSE TRINITY NEXUS
   </p>
@@ -419,12 +420,12 @@ className="text-[#00ff99] mb-4"
         certificate lifecycle and key management.
       </p>
 
-    </div>
-
-  </div>
-
+     </div>   {/* Grid */}
+</div>     {/* max-w-7xl */}
+</div>
 </section>
-<section className="max-w-7xl mx-auto px-8 py-16">
+<section className="w-full bg-[#061321] py-16">
+  <div className="max-w-7xl mx-auto px-8">
 
   <p className="text-[#00ff99] uppercase tracking-[4px]">
     // OUR DELIVERY APPROACH
@@ -563,14 +564,14 @@ establishing a security baseline.
   </div>
 
 </div>
-
+</div>
 
 </section>
 
 
 
 
-<section className="max-w-7xl mx-auto px-8 py-16">
+<section className="max-w-7xl mx-auto px-8 py-16 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
 
 <p className="text-[#00ff99] uppercase tracking-[4px]">
  // 19 SERVICES • 8 ADD-ONS
@@ -607,7 +608,7 @@ className="bg-[#091b2d] border border-[#00ff99]/20 rounded-xl p-6 max-w-5xl tran
 ))}
 
 </div>
-
+</section>
 {/* TECHNOLOGY STACK */}
 
 <section className="max-w-6xl mx-auto px-8 py-12">
@@ -687,7 +688,8 @@ className="bg-[#091b2d] border border-[#00ff99]/20 rounded-xl p-6 max-w-5xl tran
 
 {/* FINAL CTA */}
 
-<section className="max-w-5xl mx-auto px-6 py-10">
+<section className="w-full py-10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+  <div className="max-w-5xl mx-auto px-6">
   <div className="border border-[#00ff99]/20 rounded-2xl bg-[#091b2d] py-14 px-8 text-center">
 
     <p className="uppercase tracking-[5px] text-gray-400 text-sm">
@@ -720,10 +722,10 @@ className="bg-[#091b2d] border border-[#00ff99]/20 rounded-xl p-6 max-w-5xl tran
     </div>
 
   </div>
-
+</div>
 </section>
 
-</section>
+
 
 
 

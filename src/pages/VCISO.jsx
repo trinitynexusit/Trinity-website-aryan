@@ -4,10 +4,34 @@ export default function NetworkSecurity() {
     <>
       <ServiceTabs />
 
-      <section className="relative overflow-hidden bg-[#08131f] border-b border-cyan-900/30">
+      <section
+  className="relative overflow-hidden border-b border-cyan-900/30"
+ style={{
+  background: `
+    radial-gradient(circle at top,
+      rgba(59,130,246,0.10) 0%,
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      #173867 0%,
+      #1b447c 40%,
+      #214d8b 100%
+    )
+  `,
+}} >
 
   {/* Background Grid */}
-  <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,170,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,170,0.05)_1px,transparent_1px)] bg-[size:60px_60px]" />
+  <div
+  className="absolute inset-0 opacity-25"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+    `,
+    backgroundSize: "72px 72px",
+  }}
+/>
 
   <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16">
 
@@ -212,7 +236,14 @@ export default function NetworkSecurity() {
 
 {/* ================= OUR STRENGTHS ================= */}
 
-<section className="py-14 bg-[#08131f]">
+<section
+  className="relative py-24 overflow-hidden"
+  style={{
+    background: `
+      radial-gradient(circle at top, #1d4b8f 0%, #173d78 25%, #102d58 50%, #08131d 100%)
+    `,
+  }}
+>
   <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
     <div className="text-center mb-10">
@@ -368,7 +399,13 @@ export default function NetworkSecurity() {
 
 {/* ================= COMPLETE SERVICE LIST ================= */}
 
-<section className="py-14 bg-[#08131f]">
+<section
+  className="relative py-20 overflow-hidden"
+  style={{
+    background:
+      "linear-gradient(180deg, #173867 0%, #1b447c 45%, #214d8b 100%)",
+  }}
+>
   <div className="max-w-7xl mx-auto px-6">
 
     <p className="text-emerald-400 uppercase tracking-[4px] text-xs mb-2">
@@ -594,7 +631,13 @@ export default function NetworkSecurity() {
 
 {/* ================= CTA SECTION ================= */}
 
-<section className="py-14 bg-[#08131f]">
+<section
+  className="relative py-24 overflow-hidden"
+  style={{
+    background:
+      "linear-gradient(180deg, #173867 0%, #1b447c 45%, #214d8b 100%)",
+  }}
+>
   <div className="max-w-5xl mx-auto px-6">
 
     <div className="rounded-2xl border border-cyan-900/40 bg-[#0d1a2d] py-12 px-8 text-center">

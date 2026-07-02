@@ -4,8 +4,14 @@ export default function EmergingSecurity() {
     <>
       <ServiceTabs />
 
-      <section className="relative overflow-hidden bg-[#08131f] border-b border-cyan-900/30">
-  <div className="max-w-7xl mx-auto px-6 py-14">
+      <section
+  className="relative overflow-hidden border-b border-cyan-900/30"
+  style={{
+    background:
+      "linear-gradient(180deg, #173867 0%, #1b447c 45%, #214d8b 100%)",
+  }}
+>
+  <div className="relative z-10 max-w-7xl mx-auto px-6 py-14">
 
     {/* Breadcrumb */}
 
@@ -187,8 +193,24 @@ export default function EmergingSecurity() {
   </div>
 </section>
 
-<section className="py-14 bg-[#08131f]">
-  <div className="max-w-7xl mx-auto px-6">
+<section
+  className="relative py-14 overflow-hidden"
+  style={{
+    background:
+      "linear-gradient(180deg, #173867 0%, #1b447c 45%, #214d8b 100%)",
+  }}
+>
+    <div
+  className="absolute inset-0 opacity-25"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+    `,
+    backgroundSize: "72px 72px",
+  }}
+/>
+  <div className="relative z-10 max-w-7xl mx-auto px-6">
 
     <div className="text-center mb-12">
 
@@ -344,8 +366,24 @@ export default function EmergingSecurity() {
 
 {/* ================= COMPLETE SERVICE LIST ================= */}
 
-<section className="py-14 bg-[#08131f]">
-  <div className="max-w-7xl mx-auto px-6">
+<section
+  className="relative py-16 overflow-hidden"
+  style={{
+    background:
+      "linear-gradient(180deg, #173867 0%, #1b447c 45%, #214d8b 100%)",
+  }}
+>
+    <div
+  className="absolute inset-0 opacity-25"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+    `,
+    backgroundSize: "72px 72px",
+  }}
+/>
+  <div className="relative z-10 max-w-7xl mx-auto px-6">
 
     <p className="uppercase tracking-[5px] text-emerald-400 text-xs mb-3">
       // 11 SERVICES • 4 ADD-ONS
@@ -588,8 +626,24 @@ export default function EmergingSecurity() {
   </div>
 </section>
 
-<section className="py-16 bg-[#07131f]">
-  <div className="max-w-6xl mx-auto px-6">
+<section
+  className="relative py-20 overflow-hidden"
+  style={{
+    background:
+      "linear-gradient(180deg, #173867 0%, #1d4b88 45%, #214f91 100%)",
+  }}
+>
+    <div
+  className="absolute inset-0 opacity-20"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+    `,
+    backgroundSize: "72px 72px",
+  }}
+/>
+  <div className="relative z-10 max-w-6xl mx-auto px-6">
 
     <div className="rounded-2xl border border-cyan-900 bg-gradient-to-b from-[#0b1a2a] to-[#081522] px-8 py-12 text-center">
 

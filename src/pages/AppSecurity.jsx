@@ -5,8 +5,26 @@ export default function NetworkSecurity() {
     <ServiceTabs />
 
     {/* Hero Section */}
-   <section className="relative overflow-hidden min-h-screen border-b border-[#00ff99]/10">
-  <div className="max-w-7xl mx-auto px-6 pt-12 pb-16">
+   {/* Hero Section */}
+<section className="relative overflow-hidden min-h-screen flex items-center border-b border-[#00ff99]/10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+
+  {/* Grid Background */}
+  <div
+    className="absolute inset-0 opacity-20"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+      `,
+      backgroundSize: "80px 80px",
+    }}
+  />
+
+  {/* Blue Glow */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
+
+  {/* Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 w-full">
 
     <p className="text-gray-400 text-sm mb-10">
       Home / Services / <span className="text-white">App Security & DevSecOps</span>
@@ -64,7 +82,7 @@ export default function NetworkSecurity() {
 
     </div>
 
-    <div className="flex gap-5 mt-12">
+   <div className="flex gap-5 mt-12 mb-20">
 
       <button className="bg-emerald-400 text-black font-semibold px-8 py-3 rounded-lg hover:bg-emerald-300 transition">
         Get Free Assessment
@@ -75,7 +93,8 @@ export default function NetworkSecurity() {
       </button>
 
     </div>
-<section className="bg-[#081522] py-14">
+
+<section className="py-14 border-t border-[#00ff99]/10 bg-[#0b1d2f]">
   <div className="max-w-7xl mx-auto px-6">
 
     <div className="grid lg:grid-cols-2 gap-10 items-start">
@@ -181,8 +200,24 @@ export default function NetworkSecurity() {
   </div>
 </section>
 
-<section className="bg-[#081522] py-14">
-  <div className="max-w-7xl mx-auto px-6">
+<section className="relative overflow-hidden py-16 border-t border-[#00ff99]/10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+
+  {/* Grid */}
+  <div
+    className="absolute inset-0 opacity-20"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+      `,
+      backgroundSize: "80px 80px",
+    }}
+  />
+
+  {/* Glow */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
+
+  <div className="relative z-10 max-w-7xl mx-auto px-6">
 
     <p className="text-center text-emerald-400 uppercase tracking-[4px] text-xs mb-3">
       // WHY CHOOSE TRINITY NEXUS
@@ -394,8 +429,25 @@ export default function NetworkSecurity() {
 
   </div>
 </section>
-<section className="bg-[#081522] py-14">
-  <div className="max-w-7xl mx-auto px-6">
+<section className="relative overflow-hidden py-14 border-t border-[#00ff99]/10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+
+  {/* Grid Background */}
+  <div
+    className="absolute inset-0 opacity-20"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+      `,
+      backgroundSize: "80px 80px",
+    }}
+  />
+
+  {/* Blue Glow */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
+
+  <div className="relative z-10 max-w-7xl mx-auto px-6">
+ 
 
     <p className="text-emerald-400 uppercase tracking-[4px] text-xs mb-3">
       // 13 SERVICES • 4 ADD-ONS
@@ -659,7 +711,26 @@ Review solution architecture against OWASP ASVS Level 2/3, NIST and security des
 
 
     </div>
-<section className="bg-[#081522] py-14">
+<section
+  className="relative overflow-hidden py-16 mt-16 border-t border-[#00ff99]/10
+  bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]"
+>
+  {/* Grid Background */}
+<div
+  className="absolute inset-0 opacity-20"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+    `,
+    backgroundSize: "80px 80px",
+  }}
+/>
+
+{/* Blue Glow */}
+<div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
+
+<div className="relative z-10 max-w-7xl mx-auto px-6"></div>
   <div className="max-w-7xl mx-auto px-6">
 
     <div className="grid lg:grid-cols-2 gap-16">

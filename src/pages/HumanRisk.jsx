@@ -8,12 +8,23 @@ export default function HumanRisk() {
     <>
       <ServiceTabs />
 
-      <section className="relative overflow-hidden bg-[#08131f] border-b border-cyan-900/30">
+      <section className="relative overflow-hidden border-b border-[#00ff99]/10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
 
         {/* Grid Background */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,170,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,170,0.05)_1px,transparent_1px)] bg-[size:64px_64px]" />
+        <div
+  className="absolute inset-0 opacity-20"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)
+    `,
+    backgroundSize: "80px 80px",
+  }}
+/>
 
-        <div className="relative max-w-7xl mx-auto px-8 lg:px-12 py-14">
+<div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-12 py-14">
 
           {/* Breadcrumb */}
           <div className="flex items-center gap-3 text-sm text-gray-400 mb-7">
@@ -221,7 +232,21 @@ export default function HumanRisk() {
 
 {/* ================= OUR STRENGTHS ================= */}
 
-<section className="py-16 px-6 lg:px-10 bg-[#07131f]">
+<section
+  className="relative overflow-hidden py-16"
+  style={{
+    background: `
+      radial-gradient(circle at top, rgba(37,99,235,0.18) 0%, transparent 45%),
+      linear-gradient(
+        180deg,
+        #173867 0%,
+        #1b4277 35%,
+        #214b84 65%,
+        #234f89 100%
+      )
+    `,
+  }}
+>
   <div className="max-w-7xl mx-auto">
 
     <p className="text-center text-[#00ff99] uppercase tracking-[4px] text-sm mb-3">
@@ -307,8 +332,18 @@ export default function HumanRisk() {
 
 {/* ================= HOW WE DELIVER ================= */}
 
-<section className="py-16 border-t border-cyan-900/30">
-  <div className="max-w-6xl mx-auto px-6">
+<section className="relative overflow-hidden bg-[#08131d] py-20">
+  <div
+  className="absolute inset-0 opacity-25"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(0,255,170,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,170,0.06) 1px, transparent 1px)
+    `,
+    backgroundSize: "72px 72px",
+  }}
+/>
+<div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-12">
 
     <p className="text-emerald-400 uppercase tracking-[4px] text-xs font-semibold mb-3">
       // OUR DELIVERY APPROACH
@@ -485,7 +520,7 @@ export default function HumanRisk() {
 
 {/* ================= TECHNOLOGY STACK ================= */}
 
-<section className="py-14 border-t border-cyan-900/30">
+<section className="py-14 border-t border-cyan-900/30 bg-[#07131f]">
   <div className="max-w-6xl mx-auto px-6">
 
     <div className="grid lg:grid-cols-2 gap-14">
@@ -577,7 +612,21 @@ export default function HumanRisk() {
 <section className="py-12">
   <div className="max-w-5xl mx-auto px-6">
 
-    <div className="rounded-2xl border border-cyan-900/40 bg-gradient-to-b from-[#0f2035] to-[#091625] p-10 text-center">
+    <div
+  className="rounded-2xl border border-cyan-900/40 p-10 text-center"
+  style={{
+    background: `
+      radial-gradient(circle at top center, rgba(37,99,235,0.22), transparent 55%),
+      linear-gradient(
+        180deg,
+        #173867 0%,
+        #1b4277 35%,
+        #214b84 65%,
+        #234f89 100%
+      )
+    `,
+  }}
+>
 
       <p className="text-sky-300 uppercase tracking-[6px] text-xs mb-6">
         D09 • HUMAN RISK MANAGEMENT

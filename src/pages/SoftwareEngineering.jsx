@@ -1,8 +1,30 @@
+import ServiceTabs from "../components/ServiceTabs";
 export default function NetworkSecurity() {
-  return (
-    <section className="relative bg-[#07131f] overflow-hidden py-16 lg:py-20">
+  
+  
+    return (
+<>
+    <ServiceTabs />
 
-  <div className="max-w-7xl mx-auto px-6">
+    <section
+  className="relative overflow-hidden py-16 lg:py-20"
+  style={{
+    background:
+      "linear-gradient(180deg, #173867 0%, #1d4b88 45%, #214f91 100%)",
+  }}
+>
+{/* Hero Grid */}
+<div
+  className="absolute inset-0 opacity-20"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+    `,
+    backgroundSize: "72px 72px",
+  }}
+/>
+  <div className="relative z-10 max-w-7xl mx-auto px-6">
 
     {/* Breadcrumb */}
     <div className="flex items-center gap-3 text-gray-400 text-sm mb-6">
@@ -81,20 +103,22 @@ export default function NetworkSecurity() {
 
     {/* Buttons */}
 
-    <div className="flex flex-wrap gap-5">
+   <div className="flex flex-wrap gap-5 mb-20">
 
-      <button className="bg-[#00F5A0] hover:bg-[#00d98b] transition text-black font-semibold px-8 py-4 rounded-lg">
-        ⚡ Get Free Assessment
-      </button>
+  <button className="bg-[#00F5A0] hover:bg-[#00d98b] transition text-black font-semibold px-8 py-4 rounded-lg">
+    ⚡ Get Free Assessment
+  </button>
 
-      <button className="border border-cyan-800 text-[#00F5A0] hover:bg-[#00F5A0] hover:text-black transition px-8 py-4 rounded-lg font-semibold">
-        ← All Domains
-      </button>
+  <button className="border border-cyan-800 text-[#00F5A0] hover:bg-[#00F5A0] hover:text-black transition px-8 py-4 rounded-lg font-semibold">
+    ← All Domains
+  </button>
 
-    </div>
-
+</div>
   </div>
-<section className="py-16 bg-[#07131f]">
+
+
+  
+<section className="pt-24 pb-16 bg-[#07131f]">
   <div className="max-w-7xl mx-auto px-6">
 
     <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -202,7 +226,25 @@ export default function NetworkSecurity() {
 
   </div>
 </section>
-<section className="py-14 bg-[#07131f]">
+
+<section
+  className="relative overflow-hidden py-14"
+  style={{
+    background:
+      "linear-gradient(180deg, #173867 0%, #1d4b88 45%, #214f91 100%)",
+  }}
+>
+    {/* Grid Background */}
+<div
+  className="absolute inset-0 opacity-20"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+    `,
+    backgroundSize: "72px 72px",
+  }}
+/>
   <div className="max-w-7xl mx-auto px-6">
 
     {/* Heading */}
@@ -368,7 +410,26 @@ export default function NetworkSecurity() {
   </div>
 </section>
 
-<section className="py-10 bg-[#07131f]">
+<section
+  className="relative overflow-hidden py-10"
+  style={{
+    background:
+      "linear-gradient(180deg, #173867 0%, #1d4b88 45%, #214f91 100%)",
+  }}
+>
+  {/* Hero Grid */}
+  <div
+    className="absolute inset-0 opacity-20"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+      `,
+      backgroundSize: "72px 72px",
+    }}
+  />
+
+  <div className="relative z-10 max-w-6xl mx-auto px-6">
   <div className="max-w-6xl mx-auto px-6">
 
     {/* Heading */}
@@ -504,7 +565,7 @@ export default function NetworkSecurity() {
       ))}
 
     </div>
-
+   </div>
   </div>
 </section>
 
@@ -610,10 +671,29 @@ export default function NetworkSecurity() {
   </div>
 </section>
 
-<section className="py-14 bg-[#07111d]">
+<section
+  className="relative overflow-hidden py-14"
+  style={{
+    background:
+      "linear-gradient(180deg, #173867 0%, #1d4b88 45%, #214f91 100%)",
+  }}
+>
+  {/* Grid Background */}
+  <div
+    className="absolute inset-0 opacity-20"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+      `,
+      backgroundSize: "72px 72px",
+    }}
+  />
+
+  <div className="relative z-10 max-w-5xl mx-auto px-6">
   <div className="max-w-5xl mx-auto px-6">
 
-    <div className="rounded-2xl border border-cyan-900 bg-gradient-to-b from-[#0d1b2d] to-[#091522] px-8 py-12 text-center">
+    <div className="rounded-2xl border border-cyan-700/60 bg-[#10294b]/70 backdrop-blur-sm px-8 py-12 text-center">
 
       <p className="text-[#00F5A0] uppercase tracking-[5px] text-xs font-semibold mb-4">
         D12 • SOFTWARE ENGINEERING & DIGITAL SOLUTIONS
@@ -639,13 +719,15 @@ export default function NetworkSecurity() {
         <button className="px-7 py-3 rounded-lg border border-cyan-900 text-[#00F5A0] hover:bg-cyan-900/20 transition">
           ← All Services
         </button>
-
+      </div>
       </div>
 
     </div>
 
   </div>
 </section>
+
 </section>
+</>
   );
 }
