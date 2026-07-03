@@ -286,7 +286,13 @@ export default function Navbar() {
 
 </nav>
   
-
+{/* Mobile Menu Button */}
+<button
+  onClick={() => setOpen(!open)}
+  className="lg:hidden text-white"
+>
+  {open ? <X size={28} /> : <Menu size={28} />}
+</button>
 
           
          <div className="hidden lg:flex items-center gap-3">
@@ -342,52 +348,22 @@ export default function Navbar() {
   </button>
 
   {servicesOpen && (
-  <div className="ml-4 flex flex-col gap-3">
-
-    <Link
-     to="/network-security"
-      className="text-gray-300 hover:text-[#00ff99]"
-    >
-      Network Security
-    </Link>
-
-    <Link
-      to="/cloud-security"
-      className="text-gray-300 hover:text-[#00ff99]"
-    >
-      Cloud Security
-    </Link>
-
-    <Link
-      to="/red-team"
-      className="text-gray-300 hover:text-[#00ff99]"
-    >
-      Red Team
-    </Link>
-
-    <Link
-      to="/soc-managed-detection"
-      className="text-gray-300 hover:text-[#00ff99]"
-    >
-      SOC
-    </Link>
-
-    <Link
-      to="/compliance-risk"
-      className="text-gray-300 hover:text-[#00ff99]"
-    >
-      Compliance
-    </Link>
-
+  <div className="ml-4 flex flex-col gap-2 mt-2 max-h-72 overflow-y-auto">
+    {Object.entries(serviceRoutes).map(([name, path]) => (
       <Link
-  to="/vapt"
-  className="text-gray-300 hover:text-[#00ff99]"
->
-  VAPT
-</Link>
-
+        key={path}
+        to={path}
+        onClick={() => {
+          setOpen(false);
+          setServicesOpen(false);
+        }}
+        className="text-gray-300 hover:text-[#00ff99] py-2"
+      >
+        {name}
+      </Link>
+    ))}
   </div>
-  )}
+)}
 </div>
 
 <Link
@@ -396,21 +372,25 @@ export default function Navbar() {
 >
   About
 </Link>
-            <div className="pt-3 border-t border-white/5 space-y-2">
-              {user ? (<>
-                  {user.role === 'admin' && (<Link to="/admin" className="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg">
-                      Admin Dashboard
-                    </Link>)}
-                  <button onClick={handleLogout} className="block w-full text-left px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg">
-                    Logout
-                  </button>
-                </>) : (<Link to="/auth" className="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg">
-                  Login / Signup
-                </Link>)}
-              <Link to="/assessment" className="block px-4 py-3 text-sm font-semibold text-center bg-[#06b6d4] text-[#0f172a] rounded-lg hover:bg-[#06b6d4]/90">
-                Get Free Assessment
-              </Link>
-            </div>
+            {user && (
+  <div className="pt-3 border-t border-white/5 space-y-2">
+    {user.role === "admin" && (
+      <Link
+        to="/admin"
+        className="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg"
+      >
+        Admin Dashboard
+      </Link>
+    )}
+
+    <button
+      onClick={handleLogout}
+      className="block w-full text-left px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg"
+    >
+      Logout
+    </button>
+  </div>
+)}
           </div>
         </div>
         )}

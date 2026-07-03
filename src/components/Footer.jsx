@@ -49,13 +49,13 @@ export default function Footer() {
   <MapPin size={14} className="mt-0.5 flex-shrink-0" />
 
   <a
-    href="https://www.google.com/maps/search/?api=1&query=Assotech+Business+Cresterra+Tower+4+Sector+135+Noida+201305"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:text-[#00ff99] transition-colors"
-  >
-    Assotech Business Cresterra, 1115, Tower 4, Sector 135, Noida (UP), India, 201305
-  </a>
+  href="https://maps.app.goo.gl/SWyXJZPWjf25oin38"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:text-[#00ff99] transition-colors"
+>
+  Assotech Business Cresterra, 1115, Tower 4, Sector 135, Noida (UP), India, 201305
+</a>
 </span>
             </div>
             <div className="flex items-center gap-3 mt-6">

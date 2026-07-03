@@ -49,7 +49,44 @@ export default function Stats() {
             observer.observe(ref.current);
         return () => observer.disconnect();
     }, []);
-    return (<div ref={ref} className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-      {stats.map((s) => (<StatItem key={s.label} {...s} started={started}/>))}
-    </div>);
+    return (
+  <div
+    ref={ref}
+    className="
+      relative
+      grid
+      grid-cols-2
+      lg:grid-cols-4
+      gap-8
+      lg:gap-12
+
+      rounded-3xl
+      border border-white/10
+      bg-white/[0.03]
+      backdrop-blur-md
+
+      px-8
+      py-10
+
+      shadow-[0_0_60px_rgba(0,255,153,0.08)]
+    "
+  >
+    {stats.map((s, index) => (
+      <div
+        key={s.label}
+        className={`
+          relative
+          flex
+          justify-center
+
+          ${index !== stats.length - 1
+            ? "lg:border-r lg:border-white/10"
+            : ""}
+        `}
+      >
+        <StatItem {...s} started={started} />
+      </div>
+    ))}
+  </div>
+);
 }

@@ -84,7 +84,7 @@ export default function Home() {
     return (
   <main className="cyber-bg section-grid-bg text-white overflow-hidden min-h-screen">
       
-      <section className="relative min-h-screen flex items-center pt-20">
+     <section className="relative pt-24 lg:pt-32 pb-16">
         
         <div className="absolute inset-0 opacity-[0.01]" style={{
             backgroundImage: 'linear-gradient(#06b6d4 1px, transparent 1px), linear-gradient(90deg, #06b6d4 1px, transparent 1px)',
@@ -98,9 +98,9 @@ export default function Home() {
 <div className="absolute top-[20%] right-[10%] w-[900px] h-[900px] bg-[#38bdf8]/25 rounded-full blur-[220px] pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             
-            <div>
+            <div className="order-1">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#00ff99]/20 bg-[#06b6d4]/5 text-[#06b6d4] text-xs font-mono mb-8">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#00ff99] animate-pulse" />
                 <span className="text-[#00ff99]">
@@ -108,7 +108,7 @@ export default function Home() {
 </span>
               </div>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.85] tracking-[-0.08em] uppercase">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[0.85] tracking-[-0.08em] uppercase">
                 <span className="text-white">ELITE</span>
                 <br />
                 <span className="text-[#00ff99]">CYBER</span>
@@ -118,7 +118,7 @@ export default function Home() {
 
               
 
-              <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-lg">
+              <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8 max-w-lg">
                 India's Most Comprehensive Cybersecurity Firm.
 12 Domains • 192 Services • 24×7 SOC.
 From Offensive Red Teaming to GRC Compliance, We Secure Enterprises That Can't Afford to Be Breached.
@@ -127,14 +127,14 @@ From Offensive Red Teaming to GRC Compliance, We Secure Enterprises That Can't A
               
              
 
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <Link to="/assessment" className="flex items-center justify-center gap-2 px-6 py-3.5 bg-[#00ff99] text-[#0f172a]  font-semibold rounded-lg hover:bg-[#06b6d4]/90 transition-all hover:shadow-lg hover:shadow-[#06b6d4]/20 active:scale-95">
                   Get Free Risk Assessment
                   <ChevronRight size={16}/>
                 </Link>
                 
               </div>
-              <div className="flex items-center gap-10 mt-10 text-[#00ff99]">
+              <div className="grid grid-cols-2 lg:flex lg:items-center gap-6 mt-10 text-[#00ff99]">
   <div className="border-l-2 border-[#00ff99] pl-4">
     <div className="text-4xl font-bold">192</div>
     <div className="text-xs uppercase tracking-widest text-white/70">
@@ -166,25 +166,37 @@ From Offensive Red Teaming to GRC Compliance, We Secure Enterprises That Can't A
             </div>
 
             
-            <div className="relative">
-              <div className="absolute -inset-4 bg-[#06b6d4]/5 rounded-2xl blur-2xl"/>
-              <div className="relative">
-                <TerminalFeed />
-              </div>
-              
-              <div className="absolute -bottom-4 -left-4 px-3 py-2 rounded-lg bg-[#0f172a] border border-[#06b6d4]/20 shadow-xl">
-                <div className="text-xs text-gray-500 mb-0.5">MTTR</div>
-               <div className="text-base font-bold text-[#00ff99] font-mono drop-shadow-[0_0_8px_#00ff99]">
-  &lt; 4 hrs
+           <div className="relative order-2 mt-8 lg:mt-0">
+
+  <div className="absolute -inset-4 bg-[#06b6d4]/5 rounded-2xl blur-2xl" />
+
+  <TerminalFeed />
+
+  <div className="absolute -bottom-4 -left-4 px-3 py-2 rounded-lg bg-[#0f172a] border border-[#06b6d4]/20 shadow-xl">
+    <div className="text-xs text-gray-500 mb-0.5">
+      MTTR
+    </div>
+
+    <div className="text-base font-bold text-[#00ff99]">
+      &lt; 4 hrs
+    </div>
+  </div>
+
+  <div className="absolute -top-4 -right-4 px-3 py-2 rounded-lg bg-[#0f172a] border border-blue-400/20 shadow-xl">
+    <div className="text-xs text-gray-500">
+      Threats blocked today
+    </div>
+
+    <div className="text-base font-bold text-[#00ff99]">
+      12,847
+    </div>
+  </div>
+
 </div>
-              </div>
-              <div className="absolute -top-4 -right-4 px-3 py-2 rounded-lg bg-[#0f172a] border border-blue-400/20 shadow-xl">
-                <div className="text-xs text-gray-500 mb-0.5">Threats blocked today</div>
-                <div className="text-base font-bold text-[#00ff99] font-mono">12,847</div>
-              </div>
+                
             </div>
           </div>
-        </div>
+        
       </section>
 
       <section className="pb-10">
@@ -197,7 +209,32 @@ From Offensive Red Teaming to GRC Compliance, We Secure Enterprises That Can't A
 
     {/* Trust Badges */}
     
-<div className="flex flex-wrap gap-3 justify-center mb-12">
+<div
+  className="
+    relative
+    flex
+    flex-wrap
+    justify-center
+    gap-3
+    mb-16
+    px-8
+    py-10
+    rounded-3xl
+
+    bg-white/[0.025]
+    backdrop-blur-md
+
+    border border-white/10
+
+    shadow-[0_0_70px_rgba(0,255,153,0.08)]
+
+    before:absolute
+    before:inset-0
+    before:rounded-3xl
+    before:bg-[radial-gradient(circle_at_center,rgba(0,255,153,0.08),transparent_70%)]
+    before:pointer-events-none
+  "
+>
   {trustItems.map((item) => (
     <span
       key={item}
@@ -350,6 +387,7 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
 </Link>
 
 </div>
+
 <section className="py-24 border-t border-white/5 section-grid-bg">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
