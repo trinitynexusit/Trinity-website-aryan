@@ -171,15 +171,15 @@ From Offensive Red Teaming to GRC Compliance, We Secure Enterprises That Can't A
 
   <TerminalFeed />
 
-  <div className="absolute -bottom-4 -left-4 px-3 py-2 rounded-lg bg-[#0f172a] border border-[#06b6d4]/20 shadow-xl">
-    <div className="text-xs text-gray-500 mb-0.5">
-      MTTR
-    </div>
-
-    <div className="text-base font-bold text-[#00ff99]">
-      &lt; 4 hrs
-    </div>
+  <div className="absolute -bottom-6 -left-6 px-4 py-3 rounded-xl bg-[#0f172a] border border-[#06b6d4]/20 shadow-xl">
+  <div className="text-xs text-gray-500">
+    MTTR
   </div>
+
+  <div className="text-lg font-bold text-[#00ff99]">
+    &lt; 4 hrs
+  </div>
+</div>
 
   <div className="absolute -top-4 -right-4 px-3 py-2 rounded-lg bg-[#0f172a] border border-blue-400/20 shadow-xl">
     <div className="text-xs text-gray-500">
@@ -597,7 +597,7 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
   Securing the world's leading organisations across India, UK, Malaysia and
   Singapore — from global IT giants to financial exchanges and telecoms.
 </p>
-<div className="w-full flex justify-center items-center gap-20 mt-10">
+<div className="w-full flex justify-center items-center gap-4 mt-10">
   
 
   <div className="p-5 text-center">
@@ -605,14 +605,14 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
     <div className="text-xs uppercase text-gray-500 mt-2">Countries</div>
   </div>
 
-  <div className="p-5 text-center border-l border-[#00ff99]/10">
+  <div className="min-w-[90px] p-3 md:p-5 text-center border-l border-[#00ff99]/10 shrink-0">
     <div className="text-3xl font-bold text-[#00ff99]">150+</div>
     <div className="text-xs uppercase text-gray-500 mt-2">
       Orgs Protected
     </div>
   </div>
 
-  <div className="p-5 text-center border-l border-[#00ff99]/10">
+  <div className="min-w-[90px] p-3 md:p-5 text-center border-l border-[#00ff99]/10 shrink-0">
     <div className="text-3xl font-bold text-[#00ff99]">6</div>
     <div className="text-xs uppercase text-gray-500 mt-2">Sectors</div>
   </div>
