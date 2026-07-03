@@ -17,8 +17,8 @@ const services = [
 
 export default function ServiceTabs() {
   return (
-    <div className="sticky top-16 z-40 bg-[#0b1625]/70 backdrop-blur-lg border-b border-white/10 shadow-lg overflow-x-auto scrollbar-hide">
-      <div className="flex items-center whitespace-nowrap w-max px-4">
+    <div className="sticky top-16 z-40 w-full overflow-x-auto bg-[#0b1625]/70 backdrop-blur-lg border-b border-white/10 shadow-lg scrollbar-hide">
+      <div className="flex items-center whitespace-nowrap min-w-max px-4">
         {services.map((service) => (
 <NavLink
   key={service.path}

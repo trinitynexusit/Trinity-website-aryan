@@ -5,7 +5,7 @@ export default function NetworkSecurity() {
     <ServiceTabs />
 
     {/* Hero Section */}
-    <section className="relative overflow-hidden min-h-screen flex items-center border-b border-[#00ff99]/10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
+    <section className="relative overflow-hidden relative overflow-hidden border-b border-[#00ff99]/10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345] py-16 lg:py-24 border-b border-[#00ff99]/10 bg-gradient-to-r from-[#0b2345] via-[#143b6b] to-[#0b2345]">
     {/* Grid Background */}
 <div
   className="absolute inset-0 opacity-20"
@@ -20,7 +20,7 @@ export default function NetworkSecurity() {
 
 {/* Blue Glow */}
 <div className="absolute inset-0 bg-gradient-to-br from-[#1e4d8f]/30 via-transparent to-transparent" />
-  <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-20">
 
     {/* Breadcrumb */}
 
@@ -40,11 +40,11 @@ export default function NetworkSecurity() {
 
     {/* Heading */}
 
-    <h1 className="text-6xl font-extrabold uppercase leading-none text-white">
+    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase leading-none text-white">
       ZERO TRUST ACCESS
     </h1>
 
-    <h1 className="text-6xl font-extrabold uppercase leading-none text-emerald-400 mt-3">
+    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase leading-none text-emerald-400 mt-3">
       PAM. MFA. SSO. IGA.
     </h1>
 
@@ -57,33 +57,33 @@ export default function NetworkSecurity() {
 
     {/* Stats */}
 
-    <div className="flex flex-wrap gap-16 mt-12">
+    <div className="grid grid-cols-2 lg:flex gap-8 lg:gap-16 mt-12">
 
       <div>
-        <h2 className="text-5xl font-bold text-emerald-400">11</h2>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl">11</h2>
         <p className="uppercase text-gray-500 tracking-[3px] text-sm mt-2">
           Services
         </p>
       </div>
 
       <div>
-        <h2 className="text-5xl font-bold text-emerald-400">4</h2>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-400">4</h2>
         <p className="uppercase text-gray-500 tracking-[3px] text-sm mt-2">
           Add-ons
         </p>
       </div>
 
       <div>
-        <h2 className="text-5xl font-bold text-emerald-400">
-          ZERO TRUST
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-400">
+ZERO TRUST
         </h2>
         <p className="uppercase text-gray-500 tracking-[3px] text-sm mt-2">
           Architecture
         </p>
       </div>
 
-      <div>
-        <h2 className="text-5xl font-bold text-emerald-400">80%</h2>
+      <div>        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-400">80%</h2>
+
         <p className="uppercase text-gray-500 tracking-[3px] text-sm mt-2">
           Breaches via Credentials
         </p>
@@ -99,7 +99,7 @@ export default function NetworkSecurity() {
 
     <div className="flex flex-wrap gap-5">
 
-      <button className="bg-emerald-400 hover:bg-emerald-300 text-black font-semibold px-10 py-4 rounded-lg transition">
+      <button className="w-full sm:w-auto bg-emerald-400 hover:bg-emerald-300 text-black font-semibold px-6 sm:px-10 py-4 rounded-lg transition">
         Get Free Assessment
       </button>
 
@@ -108,7 +108,8 @@ export default function NetworkSecurity() {
       </button>
 
     </div>
-
+  </div>
+</section>
 
 <section className="bg-[#081522] py-14 mt-16">
   <div className="max-w-7xl mx-auto px-6">
@@ -123,7 +124,7 @@ export default function NetworkSecurity() {
           // OVERVIEW
         </p>
 
-        <h2 className="text-5xl font-extrabold uppercase text-white leading-tight mb-8">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl uppercase text-white leading-tight mb-8">
           ELIMINATE CREDENTIAL-BASED
           <br />
           BREACHES
@@ -188,35 +189,34 @@ export default function NetworkSecurity() {
 
         <div className="space-y-6">
 
-          <div className="flex justify-between border-b border-cyan-900 pb-4">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-2 border-b border-cyan-900 pb-4">
             <span className="text-gray-400">Engagement Models</span>
             <span className="text-white font-semibold">
               Project • Assessment • Advisory
             </span>
           </div>
 
-          <div className="flex justify-between border-b border-cyan-900 pb-4">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-2 border-b border-cyan-900 pb-4">
             <span className="text-gray-400">PAM Platforms</span>
             <span className="text-white font-semibold">
               CyberArk • BeyondTrust • Delinea
             </span>
           </div>
 
-          <div className="flex justify-between border-b border-cyan-900 pb-4">
-            <span className="text-gray-400">IdP Platforms</span>
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-2 border-b border-cyan-900 pb-4">
             <span className="text-white font-semibold">
               Okta • Entra ID • Ping Identity
             </span>
           </div>
 
-          <div className="flex justify-between border-b border-cyan-900 pb-4">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-2 border-b border-cyan-900 pb-4">
             <span className="text-gray-400">MFA Methods</span>
             <span className="text-white font-semibold">
               FIDO2 • YubiKey • Duo • OTP
             </span>
           </div>
 
-          <div className="flex justify-between pb-4">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-2 pb-4">
             <span className="text-gray-400">Compliance</span>
             <span className="text-white font-semibold">
               ISO 27001 • NIST 800-53 • PCI DSS • SOX
@@ -259,7 +259,7 @@ export default function NetworkSecurity() {
         // WHY CHOOSE TRINITY NEXUS
       </p>
 
-      <h2 className="text-5xl font-extrabold uppercase text-white">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-white">
         OUR STRENGTHS
       </h2>
     </div>
@@ -372,7 +372,7 @@ export default function NetworkSecurity() {
       // OUR DELIVERY APPROACH
     </p>
 
-    <h2 className="text-5xl font-black uppercase text-white mb-6">
+    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mb-6">
       HOW WE DELIVER
     </h2>
 
@@ -387,14 +387,14 @@ export default function NetworkSecurity() {
 
       {/* 01 */}
 
-      <div className="grid grid-cols-[70px_1fr] gap-8 border-b border-cyan-900 pb-10">
+      <div className="grid grid-cols-[45px_1fr] sm:grid-cols-[70px_1fr] gap-8 border-b border-cyan-900 pb-10">
 
-        <h3 className="text-5xl font-bold text-emerald-500">
+        <h3 className="text-3xl sm:text-5xl font-bold text-emerald-500">
           01
         </h3>
 
         <div>
-          <h4 className="text-3xl font-bold text-white mb-4">
+          <h4 className="text-xl sm:text-2xl lg:text-3xl text-white mb-4">
             IAM Maturity Assessment
           </h4>
 
@@ -409,15 +409,15 @@ export default function NetworkSecurity() {
 
       {/* 02 */}
 
-      <div className="grid grid-cols-[70px_1fr] gap-8 border-b border-cyan-900 pb-10">
+      <div className="grid grid-cols-[45px_1fr] sm:grid-cols-[70px_1fr] gap-8 border-b border-cyan-900 pb-10">
 
-        <h3 className="text-5xl font-bold text-emerald-500">
+        <h3 className="text-3xl sm:text-5xl font-bold text-emerald-500">
           02
         </h3>
 
         <div>
 
-          <h4 className="text-3xl font-bold text-white mb-4">
+          <h4 className="text-xl sm:text-2xl lg:text-3xl text-white mb-4">
             Privileged Account Discovery
           </h4>
 
@@ -433,15 +433,15 @@ export default function NetworkSecurity() {
 
       {/* 03 */}
 
-      <div className="grid grid-cols-[70px_1fr] gap-8 border-b border-cyan-900 pb-10">
+      <div className="grid grid-cols-[45px_1fr] sm:grid-cols-[70px_1fr] gap-8 border-b border-cyan-900 pb-10">
 
-        <h3 className="text-5xl font-bold text-emerald-500">
+       <h3 className="text-3xl sm:text-5xl font-bold text-emerald-500">
           03
         </h3>
 
         <div>
 
-          <h4 className="text-3xl font-bold text-white mb-4">
+          <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
             PAM & MFA Implementation
           </h4>
 
@@ -457,15 +457,15 @@ export default function NetworkSecurity() {
 
       {/* 04 */}
 
-      <div className="grid grid-cols-[70px_1fr] gap-8 border-b border-cyan-900 pb-10">
+      <div className="grid grid-cols-[45px_1fr] sm:grid-cols-[70px_1fr] gap-8 border-b border-cyan-900 pb-10">
 
-        <h3 className="text-5xl font-bold text-emerald-500">
+        <h3 className="text-3xl sm:text-5xl font-bold text-emerald-500">
           04
         </h3>
 
         <div>
 
-          <h4 className="text-3xl font-bold text-white mb-4">
+          <h4 className="text-xl sm:text-2xl lg:text-3xl text-white mb-4">
             SSO & ZTNA Architecture
           </h4>
 
@@ -481,15 +481,15 @@ export default function NetworkSecurity() {
 
       {/* 05 */}
 
-      <div className="grid grid-cols-[70px_1fr] gap-8">
+      <div className="grid grid-cols-[45px_1fr] sm:grid-cols-[70px_1fr] gap-8">
 
-        <h3 className="text-5xl font-bold text-emerald-500">
+        <h3 className="text-3xl sm:text-5xl font-bold text-emerald-500">
           05
         </h3>
 
         <div>
 
-          <h4 className="text-3xl font-bold text-white mb-4">
+          <h4 className="text-xl sm:text-2xl text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
             IGA Programme & Access Governance
           </h4>
 
@@ -532,7 +532,7 @@ export default function NetworkSecurity() {
       // 11 SERVICES • 4 ADD-ONS
     </p>
 
-    <h2 className="text-5xl font-black uppercase text-white mb-12">
+    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mb-12">
       COMPLETE SERVICE LIST
     </h2>
 
@@ -542,13 +542,13 @@ export default function NetworkSecurity() {
 
       <div className="bg-[#0c1b2d] border border-cyan-900 rounded-2xl p-7 hover:border-emerald-400 transition">
 
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
 
           <span className="px-4 py-2 text-xs rounded-md bg-pink-500/10 border border-pink-500 text-pink-400 font-semibold">
             Assessment
           </span>
 
-          <h3 className="text-3xl font-bold text-white">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             IAM Programme Assessment
           </h3>
 
@@ -570,13 +570,13 @@ export default function NetworkSecurity() {
 
       <div className="bg-[#0c1b2d] border border-cyan-900 rounded-2xl p-7 hover:border-emerald-400 transition">
 
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
 
           <span className="px-4 py-2 text-xs rounded-md bg-emerald-500/10 border border-emerald-500 text-emerald-400 font-semibold">
             Project
           </span>
 
-          <h3 className="text-3xl font-bold text-white">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             Privileged Access Management (PAM)
           </h3>
 
@@ -597,13 +597,13 @@ export default function NetworkSecurity() {
 
       <div className="bg-[#0c1b2d] border border-cyan-900 rounded-2xl p-7 hover:border-emerald-400 transition">
 
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
 
           <span className="px-4 py-2 text-xs rounded-md bg-pink-500/10 border border-pink-500 text-pink-400 font-semibold">
             Assessment
           </span>
 
-          <h3 className="text-3xl font-bold text-white">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             Privileged Account Discovery & Audit
           </h3>
 
@@ -622,13 +622,13 @@ export default function NetworkSecurity() {
       </div>
 <div className="bg-[#0c1b2d] border border-cyan-900 rounded-2xl p-7 hover:border-emerald-400 transition">
 
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
 
           <span className="px-4 py-2 text-xs rounded-md bg-pink-500/10 border border-pink-500 text-pink-400 font-semibold">
             Assessment
           </span>
 
-          <h3 className="text-3xl font-bold text-white">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             Multi-Factor Authentication (MFA) Deployment
           </h3>
 
@@ -645,13 +645,13 @@ export default function NetworkSecurity() {
       </div>
 <div className="bg-[#0c1b2d] border border-cyan-900 rounded-2xl p-7 hover:border-emerald-400 transition">
 
-        <div className="flex items-center gap-4 mb-4">
+       <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
 
           <span className="px-4 py-2 text-xs rounded-md bg-pink-500/10 border border-pink-500 text-pink-400 font-semibold">
             Assessment
           </span>
 
-          <h3 className="text-3xl font-bold text-white">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             MFA Bypass Risk Assessment
           </h3>
 
@@ -668,13 +668,13 @@ export default function NetworkSecurity() {
       </div>
 <div className="bg-[#0c1b2d] border border-cyan-900 rounded-2xl p-7 hover:border-emerald-400 transition">
 
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
 
           <span className="px-4 py-2 text-xs rounded-md bg-pink-500/10 border border-pink-500 text-pink-400 font-semibold">
             Assessment
           </span>
 
-          <h3 className="text-3xl font-bold text-white">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             
 Single Sign-On (SSO) Implementation
           </h3>
@@ -692,13 +692,13 @@ Design and deploy SSO via SAML 2.0/OIDC (Okta, Azure Entra ID, Ping Identity). A
       </div>
       <div className="bg-[#0c1b2d] border border-cyan-900 rounded-2xl p-7 hover:border-emerald-400 transition">
 
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
 
           <span className="px-4 py-2 text-xs rounded-md bg-pink-500/10 border border-pink-500 text-pink-400 font-semibold">
             Assessment
           </span>
 
-          <h3 className="text-3xl font-bold text-white">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             
 Zero Trust Network Access (ZTNA)
           </h3>
@@ -717,13 +717,13 @@ Zero Trust strategy: Zscaler, Cloudflare Access, Microsoft Entra. Identity-based
 
       <div className="bg-[#0c1b2d] border border-cyan-900 rounded-2xl p-7 hover:border-emerald-400 transition">
 
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
 
           <span className="px-4 py-2 text-xs rounded-md bg-pink-500/10 border border-pink-500 text-pink-400 font-semibold">
             Assessment
           </span>
 
-          <h3 className="text-3xl font-bold text-white">
+         <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             
 Access Review & Recertification
           </h3>
@@ -741,13 +741,13 @@ User access review campaigns across apps and infra. Identify role violations, ex
       </div>
       <div className="bg-[#0c1b2d] border border-cyan-900 rounded-2xl p-7 hover:border-emerald-400 transition">
 
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
 
           <span className="px-4 py-2 text-xs rounded-md bg-pink-500/10 border border-pink-500 text-pink-400 font-semibold">
             Assessment
           </span>
 
-          <h3 className="text-3xl font-bold text-white">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             
  Orphaned & Dormant Account Audit
           </h3>
@@ -765,13 +765,13 @@ Identify unused/orphaned/dormant accounts across AD, cloud directories and busin
       </div>
 <div className="bg-[#0c1b2d] border border-cyan-900 rounded-2xl p-7 hover:border-emerald-400 transition">
 
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
 
           <span className="px-4 py-2 text-xs rounded-md bg-pink-500/10 border border-pink-500 text-pink-400 font-semibold">
             Assessment
           </span>
 
-          <h3 className="text-3xl font-bold text-white">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             
 Identity Governance & Administration (IGA)
           </h3>
@@ -790,13 +790,13 @@ Design IGA programme: RBAC model, Joiner-Mover-Leaver process, automated provisi
 
       <div className="bg-[#0c1b2d] border border-cyan-900 rounded-2xl p-7 hover:border-emerald-400 transition">
 
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
 
           <span className="px-4 py-2 text-xs rounded-md bg-pink-500/10 border border-pink-500 text-pink-400 font-semibold">
             Assessment
           </span>
 
-          <h3 className="text-3xl font-bold text-white">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
             
 Password Policy Audit & Advisory
           </h3>
@@ -819,7 +819,7 @@ Review password policy against NIST SP 800-63B. Length over complexity, breached
 <section className="bg-[#081522] py-14">
   <div className="max-w-7xl mx-auto px-6">
 
-    <div className="grid lg:grid-cols-2 gap-20">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
 
       {/* LEFT */}
 
@@ -829,7 +829,7 @@ Review password policy against NIST SP 800-63B. Length over complexity, breached
           // TOOLS & TECHNOLOGY
         </p>
 
-        <h2 className="text-5xl font-black uppercase text-white mb-8">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mb-8">
           TECHNOLOGY STACK
         </h2>
 
@@ -877,7 +877,7 @@ Review password policy against NIST SP 800-63B. Length over complexity, breached
           // MEASURABLE OUTCOMES
         </p>
 
-        <h2 className="text-5xl font-black uppercase text-white mb-8">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mb-8">
           WHAT YOU GAIN
         </h2>
 
@@ -935,13 +935,13 @@ Review password policy against NIST SP 800-63B. Length over complexity, breached
 
   <div className="relative z-10 max-w-6xl mx-auto px-6">
 
-    <div className="rounded-3xl border border-cyan-900 bg-gradient-to-b from-[#0d1b2f] to-[#081522] py-16 px-8 text-center">
+    <div className="rounded-3xl border border-cyan-900 bg-gradient-to-b from-[#0d1b2f] to-[#081522] py-12 sm:py-16 px-4 sm:px-8 text-center">
 
       <p className="text-gray-400 uppercase tracking-[8px] text-sm mb-8">
         D06 • IDENTITY & ACCESS MANAGEMENT
       </p>
 
-      <h2 className="text-5xl lg:text-6xl font-black uppercase text-white mb-8">
+      <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase text-white mb-8">
         SECURE EVERY IDENTITY TODAY
       </h2>
 
@@ -951,13 +951,13 @@ Review password policy against NIST SP 800-63B. Length over complexity, breached
         at no cost.
       </p>
 
-      <div className="flex flex-wrap justify-center gap-6">
+      <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
 
-        <button className="bg-emerald-400 hover:bg-emerald-300 text-black font-semibold px-10 py-4 rounded-lg transition">
+        <button className="w-full sm:w-auto bg-emerald-400 hover:bg-emerald-300 text-black font-semibold px-6 sm:px-10 py-4 rounded-lg transition">
            Start Free Assessment
         </button>
 
-        <button className="border border-cyan-900 hover:border-emerald-400 text-emerald-400 px-10 py-4 rounded-lg font-semibold transition">
+        <button className="w-full sm:w-auto border border-cyan-900 hover:border-emerald-400 text-emerald-400 px-6 sm:px-10 py-4 rounded-lg font-semibold transition">
           ← All Services
         </button>
 
@@ -965,8 +965,7 @@ Review password policy against NIST SP 800-63B. Length over complexity, breached
 
     </div>
 
-  </div>
-</section>
+  
   </div>
 </section>
 </>

@@ -91,12 +91,11 @@ export default function Home() {
             backgroundSize: '80px 80px',
         }}/>
         
-        <div className="absolute top-[5%] left-[15%] w-[1600px] h-[1600px] bg-[#3b82f6]/45 rounded-full blur-[320px] pointer-events-none" />
+       <div className="absolute top-[5%] left-[15%] w-[500px] h-[500px] md:w-[1600px] md:h-[1600px] bg-[#3b82f6]/45 rounded-full blur-[120px] md:blur-[320px] pointer-events-none" />
 
-<div className="absolute top-[10%] left-[35%] w-[1200px] h-[1200px] bg-[#2563eb]/35 rounded-full blur-[280px] pointer-events-none" />
+<div className="absolute top-[10%] left-[35%] w-[400px] h-[400px] md:w-[1200px] md:h-[1200px] bg-[#2563eb]/35 rounded-full blur-[100px] md:blur-[280px] pointer-events-none" />
 
-<div className="absolute top-[20%] right-[10%] w-[900px] h-[900px] bg-[#38bdf8]/25 rounded-full blur-[220px] pointer-events-none" />
-
+<div className="absolute top-[20%] right-[10%] w-[300px] h-[300px] md:w-[900px] md:h-[900px] bg-[#38bdf8]/25 rounded-full blur-[80px] md:blur-[220px] pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             
@@ -272,7 +271,7 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
 </p>
 </div>
 
-<div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-5">
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5">
 
  <Link
   to="/network-security"
@@ -598,14 +597,10 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
   Securing the world's leading organisations across India, UK, Malaysia and
   Singapore — from global IT giants to financial exchanges and telecoms.
 </p>
+<div className="w-full flex justify-center items-center gap-20 mt-10">
+  
 
-<div className="grid grid-cols-4 max-w-3xl mx-auto mt-10 border border-[#00ff99]/15 rounded-xl overflow-hidden bg-[#061321]">
   <div className="p-5 text-center">
-    <div className="text-3xl font-bold text-[#00ff99]">12</div>
-    <div className="text-xs uppercase text-gray-500 mt-2">Clients</div>
-  </div>
-
-  <div className="p-5 text-center border-l border-[#00ff99]/10">
     <div className="text-3xl font-bold text-[#00ff99]">4+</div>
     <div className="text-xs uppercase text-gray-500 mt-2">Countries</div>
   </div>

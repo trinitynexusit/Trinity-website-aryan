@@ -1,30 +1,56 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Mail, MapPin, Linkedin, Facebook, Instagram } from 'lucide-react';
 const footerLinks = {
-    Services: [
-        { label: 'Network Security', to: '/services?domain=Network+Security' },
-        { label: 'Cloud Security', to: '/services?domain=Cloud+Security' },
-        { label: 'VAPT', to: '/services?domain=VAPT' },
-        { label: 'Red Team', to: '/services?domain=Red+Team+Operations' },
-        { label: 'Compliance & Risk', to: '/services?domain=Compliance+%26+Risk' },
-        { label: 'SOC', to: '/services?domain=SOC+%26+Managed+Detection' },
-    ],
-    Company: [
-        { label: 'About Us', to: '/#about' },
-        { label: 'Clients', to: '/#clients' },
-        { label: 'Careers', to: '#' },
-        { label: 'Blog', to: '#' },
-        { label: 'Press', to: '#' },
-    ],
-    Legal: [
-        { label: 'Privacy Policy', to: '#' },
-        { label: 'Terms of Service', to: '#' },
-        { label: 'Cookie Policy', to: '#' },
-        { label: 'Responsible Disclosure', to: '#' },
-    ],
+  Services: [
+    { label: "Network Security", to: "/network-security" },
+    { label: "Cloud Security", to: "/cloud-security" },
+    { label: "VAPT", to: "/vapt" },
+    { label: "Red Team", to: "/app-security" },
+    { label: "Compliance & Risk", to: "/grc" },
+    { label: "SOC", to: "/mssp" },
+  ],
+
+  Company: [
+    { label: "About Us", to: "/#about" },
+    { label: "Clients", to: "/#clients" },
+    { label: "Careers", to: "#" },
+    { label: "Blog", to: "#" },
+    { label: "Press", to: "#" },
+  ],
+
+  Legal: [
+    { label: "Privacy Policy", to: "#" },
+    { label: "Terms of Service", to: "#" },
+    { label: "Cookie Policy", to: "#" },
+    { label: "Responsible Disclosure", to: "#" },
+  ],
+
 };
 export default function Footer() {
-    return (<footer id="contact" className="bg-[#020810] border-t border-white/5">
+  const navigate = useNavigate();
+
+const goToAbout = () => {
+  navigate("/");
+
+  setTimeout(() => {
+    document.getElementById("about")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, 100);
+};
+
+const goToClients = () => {
+  navigate("/");
+
+  setTimeout(() => {
+    document.getElementById("clients")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, 100);
+};
+    return (
+    
+    <footer id="contact" className="bg-[#020810] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           
@@ -75,11 +101,34 @@ export default function Footer() {
           {Object.entries(footerLinks).map(([section, links]) => (<div key={section}>
               <h4 className="text-white text-sm font-semibold mb-4 tracking-wide">{section}</h4>
               <ul className="space-y-2.5">
-                {links.map((link) => (<li key={link.label}>
-                    <Link to={link.to} className="text-gray-500 text-sm hover:text-[#06b6d4] transition-colors">
-                      {link.label}
-                    </Link>
-                  </li>))}
+                {links.map((link) => (
+  <li key={link.label}>
+
+    {link.label === "About Us" ? (
+      <button
+        onClick={goToAbout}
+        className="text-gray-500 text-sm hover:text-[#06b6d4] transition-colors"
+      >
+        About Us
+      </button>
+    ) : link.label === "Clients" ? (
+      <button
+        onClick={goToClients}
+        className="text-gray-500 text-sm hover:text-[#06b6d4] transition-colors"
+      >
+        Clients
+      </button>
+    ) : (
+      <Link
+        to={link.to}
+        className="text-gray-500 text-sm hover:text-[#06b6d4] transition-colors"
+      >
+        {link.label}
+      </Link>
+    )}
+
+  </li>
+))}
               </ul>
             </div>))}
         </div>
