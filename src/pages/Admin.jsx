@@ -149,7 +149,9 @@ export default function Admin() {
           <div className="flex items-center justify-between mb-5">
             <div>
               <h2 className="text-lg font-bold text-white">Services Catalogue</h2>
-              <p className="text-sm text-gray-500 mt-0.5">75 services across 12 domains</p>
+              <p className="text-white/80 text-sm">
+  Across 12 domains
+</p>
             </div>
             <Link to="/services" className="text-sm text-[#06b6d4] hover:underline">
               View public catalogue

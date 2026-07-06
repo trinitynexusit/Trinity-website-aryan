@@ -34,7 +34,7 @@ function StatItem({ value, suffix, label, description, started }) {
         <span className="text-[#00ff99]">{suffix}</span>
       </div>
       <div className="text-sm font-semibold text-white mb-0.5">{label}</div>
-      <div className="text-xs text-gray-600">{description}</div>
+      <div className="text-xs text-white/80">{description}</div>
     </div>);
 }
 export default function Stats() {
