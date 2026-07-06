@@ -203,7 +203,7 @@ From Offensive Red Teaming to GRC Compliance, We Secure Enterprises That Can't A
     
   </div>
 </section>
-      <section className="border-t border-white/5 py-20 section-grid-bg">
+      <section className="py-20">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     {/* Trust Badges */}
@@ -252,7 +252,7 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
 </section>
 
       
-      <section id="services" className="py-24 border-t border-white/5 section-grid-bg">
+      <section id="services" className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
             <div>
@@ -387,7 +387,7 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
 
 </div>
 
-<section className="py-24 border-t border-white/5 section-grid-bg">
+<section className="py-24">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div className="text-center max-w-4xl mx-auto mb-16">
@@ -456,7 +456,7 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
 </section>
 <section
   id="industries"
-  className="py-24 border-t border-white/5 section-grid-bg"
+  className="py-24"
 >
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -577,7 +577,7 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
       
 
       
-      <section id="clients" className="py-24 border-t border-white/5 section-grid-bg">
+      <section id="clients" className="py-24 border-t border-white/5 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto mb-12">
             <p className="text-[#00ff99] text-sm font-mono tracking-[4px] uppercase mb-4">
@@ -670,7 +670,7 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
       </section>
 
       
-      <section className="py-24 border-t border-white/5 section-grid-bg">
+      <section className="py-24">
   <div className="max-w-5xl mx-auto px-6 text-center">
 
     <p className="text-[#00ff99] text-sm tracking-[4px] uppercase mb-6 font-mono">

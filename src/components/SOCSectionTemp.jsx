@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function SOCSection() {
   return (
-    <section className="py-24 border-t border-white/5 section-grid-bg">
+    <section className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">

@@ -1,8 +1,9 @@
 export default function SpecialistsSection() {
   return (
-    <section
+   <section
   id="about"
-  className="py-10 section-grid-bg border-t border-white/5"
+  className="py-10"
+
 >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
