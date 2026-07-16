@@ -153,7 +153,7 @@ hover:bg-[#091522]
 transition-all duration-300
 ">
                 <div className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-[#06b6d4]/10 border border-[#06b6d4]/25 flex items-center justify-center">
-                  <CheckCircle2 size={11} className="text-[#06b6d4]"/>
+                  <CheckCircle2 size={11} className="text-[#00FF99] drop-shadow-[0_0_6px_#00FF99]"/>
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-white">{item.title}</div>
