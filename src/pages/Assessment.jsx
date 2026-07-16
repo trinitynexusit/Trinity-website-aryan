@@ -102,12 +102,27 @@ export default function Assessment() {
         </div>
       </main>);
     }
-    return (<main className="min-h-screen bg-[#0f172a] text-white pt-24 pb-20">
+    return (<main
+  className="relative min-h-screen text-white pt-24 pb-20 overflow-hidden"
+  style={{
+    background: `
+      radial-gradient(circle at 20% 20%, rgba(37,99,235,.18), transparent 40%),
+      radial-gradient(circle at 80% 30%, rgba(6,182,212,.12), transparent 40%),
+      linear-gradient(180deg, #0b1730 0%, #08101e 100%)
+    `
+  }}
+>
       
-      <div className="fixed inset-0 opacity-[0.025] pointer-events-none" style={{
-            backgroundImage: 'linear-gradient(#06b6d4 1px, transparent 1px), linear-gradient(90deg, #06b6d4 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-        }}/>
+      <div
+  className="absolute inset-0 opacity-10 pointer-events-none"
+  style={{
+    backgroundImage: `
+      linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px)
+    `,
+    backgroundSize: "58px 58px",
+  }}
+/>
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
