@@ -104,16 +104,14 @@ export default function Assessment() {
     }
     return (<main
   className="cyber-bg section-grid-bg relative min-h-screen text-white pt-24 pb-20 overflow-hidden"
-  style={{
-    background: `
-      radial-gradient(circle at 20% 20%, rgba(37,99,235,.18), transparent 40%),
-      radial-gradient(circle at 80% 30%, rgba(6,182,212,.12), transparent 40%),
-      linear-gradient(180deg, #0b1730 0%, #08101e 100%)
-    `
-  }}
+ 
 >
       
-     
+     <div className="absolute top-[5%] left-[15%] w-[1600px] h-[1600px] bg-[#3b82f6]/45 rounded-full blur-[320px] pointer-events-none" />
+
+<div className="absolute top-[10%] left-[35%] w-[1200px] h-[1200px] bg-[#2563eb]/35 rounded-full blur-[280px] pointer-events-none" />
+
+<div className="absolute top-[20%] right-[10%] w-[900px] h-[900px] bg-[#38bdf8]/25 rounded-full blur-[220px] pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
