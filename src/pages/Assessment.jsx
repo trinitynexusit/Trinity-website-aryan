@@ -91,8 +91,7 @@ export default function Assessment() {
   alert("Something went wrong. Please try again.");
   setLoading(false);
 }
-        setLoading(false);
-        setSubmitted(true);
+        
     };
     if (submitted) {
         return (<main className="min-h-screen bg-[#0f172a] flex items-center justify-center px-4 pt-20">
