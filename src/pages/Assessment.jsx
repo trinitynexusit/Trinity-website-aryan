@@ -103,7 +103,7 @@ export default function Assessment() {
       </main>);
     }
     return (<main
-  className="relative min-h-screen text-white pt-24 pb-20 overflow-hidden"
+  className="cyber-bg section-grid-bg relative min-h-screen text-white pt-24 pb-20 overflow-hidden"
   style={{
     background: `
       radial-gradient(circle at 20% 20%, rgba(37,99,235,.18), transparent 40%),
@@ -113,16 +113,7 @@ export default function Assessment() {
   }}
 >
       
-      <div
-  className="absolute inset-0 opacity-10 pointer-events-none"
-  style={{
-    backgroundImage: `
-      linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px)
-    `,
-    backgroundSize: "58px 58px",
-  }}
-/>
+     
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
