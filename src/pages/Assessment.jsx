@@ -164,15 +164,18 @@ transition-all duration-300
 
           
           <div className="lg:col-span-2">
-            <form onSubmit={handleSubmit} className="
-p-6 sm:p-8
-rounded-3xl
-border border-cyan-400/20
-bg-[#07111d]/92
-backdrop-blur-xl
-shadow-[0_15px_60px_rgba(0,0,0,0.45)]
-space-y-6
-">
+            <form
+  onSubmit={handleSubmit}
+  className="
+  p-6 sm:p-8
+  rounded-3xl
+  border border-cyan-400/20
+  bg-[#07111d]
+  backdrop-blur-xl
+  shadow-[0_20px_60px_rgba(0,0,0,0.55)]
+  space-y-6
+"
+>
               <div className="grid sm:grid-cols-2 gap-5">
                 <Field icon={User} label="Full Name" placeholder="Jane Smith" value={form.name} error={errors.name} onChange={(v) => handleChange('name', v)}/>
                 <Field icon={Mail} label="Work Email" type="email" placeholder="jane@company.com" value={form.email} error={errors.email} onChange={(v) => handleChange('email', v)}/>
@@ -216,7 +219,21 @@ space-y-6
                     Describe Your Needs
                   </span>
                 </label>
-                <textarea rows={4} value={form.message} onChange={(e) => handleChange('message', e.target.value)} placeholder="Tell us about your current security challenges, recent incidents, upcoming compliance requirements, or anything else relevant..." className={`w-full bg-[#0d1623] border rounded-lg px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#06b6d4]/40 focus:bg-[#06b6d4]/[0.03] transition-all resize-none ${errors.message ? 'border-red-500/50' : 'border-white/10'}`}/>
+                <textarea rows={4} value={form.message} onChange={(e) => handleChange('message', e.target.value)} placeholder="Tell us about your current security challenges, recent incidents, upcoming compliance requirements, or anything else relevant..." className={`w-full
+bg-[#0b1522]
+border border-[#1b3247]
+rounded-xl
+px-4
+py-3
+text-sm
+text-white
+placeholder-gray-500
+focus:outline-none
+focus:border-cyan-400/50
+focus:bg-[#0f1b2b]
+transition-all
+${error ? 'border-red-500/50' : ''}
+`}/>
                 {errors.message && (<p className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
                     <AlertCircle size={11}/> {errors.message}
                   </p>)}
