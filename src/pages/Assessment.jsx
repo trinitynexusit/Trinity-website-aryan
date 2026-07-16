@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from "@emailjs/browser";
 import { useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { Shield, CheckCircle2, ChevronRight, AlertCircle, Loader2, Building2, Mail, User, MessageSquare, Phone, } from 'lucide-react';
@@ -66,7 +67,30 @@ export default function Assessment() {
             return;
         }
         setLoading(true);
-        await new Promise((r) => setTimeout(r, 1500));
+        try {
+  await emailjs.send(
+    "service_7sqx8nh",
+    "template_26fqzfn",
+    {
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      company: form.company,
+      size: form.size,
+      domains: form.domains.join(", "),
+      message: form.message,
+    },
+    "ucq5xBRb7txVdiUNT"
+  );
+
+  setLoading(false);
+  setSubmitted(true);
+
+} catch (error) {
+  console.error(error);
+  alert("Something went wrong. Please try again.");
+  setLoading(false);
+}
         setLoading(false);
         setSubmitted(true);
     };
