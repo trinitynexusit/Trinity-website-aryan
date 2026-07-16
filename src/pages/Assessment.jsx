@@ -36,10 +36,14 @@ export default function Assessment() {
         const e = {};
         if (!form.name.trim())
             e.name = 'Name is required';
+
         if (!form.email.trim())
             e.email = 'Email is required';
         else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
             e.email = 'Enter a valid email';
+         if (form.phone && !/^\d{10}$/.test(form.phone)) {
+    e.phone = "Enter a valid 10-digit phone number";
+}
         if (!form.company.trim())
             e.company = 'Company is required';
         if (!form.message.trim())
@@ -47,10 +51,29 @@ export default function Assessment() {
         return e;
     };
     const handleChange = (field, value) => {
-        setForm((prev) => ({ ...prev, [field]: value }));
-        if (errors[field])
-            setErrors((prev) => ({ ...prev, [field]: '' }));
-    };
+
+    // Phone
+    if (field === "phone") {
+        value = value.replace(/\D/g, "").slice(0, 10);
+    }
+
+    // Name
+    if (field === "name") {
+        value = value.replace(/[^A-Za-z ]/g, "");
+    }
+
+    setForm((prev) => ({
+        ...prev,
+        [field]: value,
+    }));
+
+    if (errors[field]) {
+        setErrors((prev) => ({
+            ...prev,
+            [field]: "",
+        }));
+    }
+};
     const toggleDomain = (domain) => {
         setForm((prev) => ({
             ...prev,
@@ -281,7 +304,15 @@ function Field({ icon: Icon, label, type = 'text', placeholder, value, error, on
           {label}
         </span>
       </label>
-      <input type={type} value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} className={`w-full bg-[#0d1623] border rounded-lg px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#06b6d4]/40 focus:bg-[#06b6d4]/[0.03] transition-all ${error ? 'border-red-500/50' : 'border-white/10'}`}/>
+      <input
+  type={type}
+  value={value}
+  onChange={(e) => onChange(e.target.value)}
+  maxLength={type === "tel" ? 10 : undefined}
+  inputMode={type === "tel" ? "numeric" : undefined}
+  className="..."
+  placeholder={placeholder}
+/>
       {error && (<p className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
           <AlertCircle size={11}/> {error}
         </p>)}
