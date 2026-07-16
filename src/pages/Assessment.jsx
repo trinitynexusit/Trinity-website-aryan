@@ -141,7 +141,17 @@ export default function Assessment() {
             { title: 'Quick Wins', desc: 'Immediate actions you can take before formal engagement.' },
             { title: 'Service Recommendation', desc: 'Tailored recommendations from our 192-service catalogue.' },
             { title: 'No Sales Pressure', desc: 'Honest advisory with zero obligation to proceed.' },
-        ].map((item) => (<div key={item.title} className="flex gap-3 p-4 rounded-xl border border-white/8 bg-white/[0.02]">
+        ].map((item) => (<div key={item.title} className="
+flex gap-3 p-5
+rounded-2xl
+border border-cyan-400/20
+bg-[#07111d]/95
+backdrop-blur-xl
+shadow-[0_10px_40px_rgba(0,0,0,0.35)]
+hover:border-cyan-400/40
+hover:bg-[#091522]
+transition-all duration-300
+">
                 <div className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-[#06b6d4]/10 border border-[#06b6d4]/25 flex items-center justify-center">
                   <CheckCircle2 size={11} className="text-[#06b6d4]"/>
                 </div>
