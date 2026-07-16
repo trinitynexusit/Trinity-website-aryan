@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import emailjs from "@emailjs/browser";
-import { useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { Shield, CheckCircle2, ChevronRight, AlertCircle, Loader2, Building2, Mail, User, MessageSquare, Phone, } from 'lucide-react';
+
 const domainOptions = [
     'Network Security',
     'Cloud Security',
@@ -14,6 +14,49 @@ const domainOptions = [
     'Incident Response',
     'Other',
 ];
+
+// ---- Field length limits ----
+const MAX_LEN = {
+    name: 80,
+    email: 100,
+    phone: 10,
+    company: 100,
+    message: 1000,
+};
+
+// ---- Security helpers ----
+// Strips HTML/script tags & dangerous characters to prevent XSS when this
+// value is ever rendered back into the DOM (e.g. the confirmation screen).
+function stripHtml(value) {
+    return value
+        .replace(/<[^>]*>/g, '')      // remove any HTML tags
+        .replace(/[<>]/g, '')         // remove stray angle brackets
+        .replace(/javascript:/gi, '') // remove javascript: URIs
+        .replace(/on\w+\s*=/gi, '');  // remove inline event handlers (onClick=, onerror= ...)
+}
+
+// Basic defense-in-depth against SQL-meta-characters / classic injection
+// payloads. NOTE: this does NOT replace parameterized queries / prepared
+// statements on whatever backend eventually consumes this data — it only
+// stops obviously malicious strings from ever leaving the browser.
+const SQLI_PATTERN = /(--|;|\/\*|\*\/|xp_|<script|drop\s+table|union\s+select|insert\s+into|delete\s+from|update\s+\w+\s+set|or\s+1\s*=\s*1|'\s*or\s*'1'\s*=\s*'1)/gi;
+function stripSqlInjection(value) {
+    return value.replace(SQLI_PATTERN, '');
+}
+
+function sanitize(value, maxLen) {
+    let v = stripHtml(value);
+    v = stripSqlInjection(v);
+    if (maxLen) v = v.slice(0, maxLen);
+    return v;
+}
+
+// RFC5322-ish practical email regex (stricter than a bare "has an @ and a dot")
+const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+
+// Accepts 10-digit numbers, optionally with a leading country code (+xx / 00xx)
+const PHONE_REGEX = /^\d{10}$/;
+
 export default function Assessment() {
 
   useEffect(() => {
@@ -32,48 +75,68 @@ export default function Assessment() {
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+
     const validate = () => {
         const e = {};
+
         if (!form.name.trim())
             e.name = 'Name is required';
+        else if (form.name.trim().length < 2)
+            e.name = 'Name is too short';
 
         if (!form.email.trim())
             e.email = 'Email is required';
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+        else if (form.email.length > MAX_LEN.email)
+            e.email = 'Email is too long';
+        else if (!EMAIL_REGEX.test(form.email.trim()))
             e.email = 'Enter a valid email';
-         if (form.phone && !/^\d{10}$/.test(form.phone)) {
-    e.phone = "Enter a valid 10-digit phone number";
-}
+
+        if (form.phone && !PHONE_REGEX.test(form.phone))
+            e.phone = 'Enter a valid 10-digit phone number';
+
         if (!form.company.trim())
             e.company = 'Company is required';
+        else if (form.company.length > MAX_LEN.company)
+            e.company = 'Company name is too long';
+
         if (!form.message.trim())
             e.message = 'Please describe your needs';
+        else if (form.message.trim().length < 10)
+            e.message = 'Please provide a bit more detail';
+        else if (form.message.length > MAX_LEN.message)
+            e.message = `Please keep it under ${MAX_LEN.message} characters`;
+
         return e;
     };
-    const handleChange = (field, value) => {
 
-    // Phone
-    if (field === "phone") {
-        value = value.replace(/\D/g, "").slice(0, 10);
-    }
+    const handleChange = (field, rawValue) => {
+        let value = rawValue;
 
-    // Name
-    if (field === "name") {
-        value = value.replace(/[^A-Za-z ]/g, "");
-    }
+        // Field-specific pre-filters (kept from original behaviour)
+        if (field === "phone") {
+            value = value.replace(/\D/g, "").slice(0, MAX_LEN.phone);
+        }
+        if (field === "name") {
+            value = value.replace(/[^A-Za-z ]/g, "").slice(0, MAX_LEN.name);
+        }
 
-    setForm((prev) => ({
-        ...prev,
-        [field]: value,
-    }));
+        // General sanitization (XSS + SQLi + max length) for every field
+        const maxLen = MAX_LEN[field];
+        value = sanitize(value, maxLen);
 
-    if (errors[field]) {
-        setErrors((prev) => ({
+        setForm((prev) => ({
             ...prev,
-            [field]: "",
+            [field]: value,
         }));
-    }
-};
+
+        if (errors[field]) {
+            setErrors((prev) => ({
+                ...prev,
+                [field]: "",
+            }));
+        }
+    };
+
     const toggleDomain = (domain) => {
         setForm((prev) => ({
             ...prev,
@@ -82,40 +145,54 @@ export default function Assessment() {
                 : [...prev.domains, domain],
         }));
     };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        // Re-sanitize everything right before submit as a final safety net
+        const clean = {
+            ...form,
+            name: sanitize(form.name, MAX_LEN.name).trim(),
+            email: sanitize(form.email, MAX_LEN.email).trim(),
+            phone: form.phone.replace(/\D/g, "").slice(0, MAX_LEN.phone),
+            company: sanitize(form.company, MAX_LEN.company).trim(),
+            message: sanitize(form.message, MAX_LEN.message).trim(),
+        };
+        setForm(clean);
+
         const e2 = validate();
         if (Object.keys(e2).length > 0) {
             setErrors(e2);
             return;
         }
+
         setLoading(true);
         try {
-  await emailjs.send(
-    "service_7sqx8nh",
-    "template_26fqzfn",
-    {
-      name: form.name,
-      email: form.email,
-      phone: form.phone,
-      company: form.company,
-      size: form.size,
-      domains: form.domains.join(", "),
-      message: form.message,
-    },
-    "ucq5xBRb7txVdiUNT"
-  );
+            await emailjs.send(
+                "service_7sqx8nh",
+                "template_26fqzfn",
+                {
+                    name: clean.name,
+                    email: clean.email,
+                    phone: clean.phone,
+                    company: clean.company,
+                    size: clean.size,
+                    domains: clean.domains.join(", "),
+                    message: clean.message,
+                },
+                "ucq5xBRb7txVdiUNT"
+            );
 
-  setLoading(false);
-  setSubmitted(true);
+            setLoading(false);
+            setSubmitted(true);
 
-} catch (error) {
-  console.error(error);
-  alert("Something went wrong. Please try again.");
-  setLoading(false);
-}
-        
+        } catch (error) {
+            console.error(error);
+            alert("Something went wrong. Please try again.");
+            setLoading(false);
+        }
     };
+
     if (submitted) {
         return (<main className="min-h-screen bg-[#0f172a] flex items-center justify-center px-4 pt-20">
         <div className="max-w-md w-full text-center">
@@ -225,10 +302,10 @@ z-20
 "
 >
               <div className="grid sm:grid-cols-2 gap-5">
-                <Field icon={User} label="Full Name" placeholder="Jane Smith" value={form.name} error={errors.name} onChange={(v) => handleChange('name', v)}/>
-                <Field icon={Mail} label="Work Email" type="email" placeholder="jane@company.com" value={form.email} error={errors.email} onChange={(v) => handleChange('email', v)}/>
-                <Field icon={Building2} label="Company" placeholder="Acme Corp" value={form.company} error={errors.company} onChange={(v) => handleChange('company', v)}/>
-                <Field icon={Phone} label="Phone (optional)" type="tel" placeholder="+44 7700 900000" value={form.phone} onChange={(v) => handleChange('phone', v)}/>
+                <Field icon={User} label="Full Name" placeholder="Jane Smith" value={form.name} error={errors.name} maxLength={MAX_LEN.name} onChange={(v) => handleChange('name', v)}/>
+                <Field icon={Mail} label="Work Email" type="email" placeholder="jane@company.com" value={form.email} error={errors.email} maxLength={MAX_LEN.email} onChange={(v) => handleChange('email', v)}/>
+                <Field icon={Building2} label="Company" placeholder="Acme Corp" value={form.company} error={errors.company} maxLength={MAX_LEN.company} onChange={(v) => handleChange('company', v)}/>
+                <Field icon={Phone} label="Phone (optional)" type="tel" placeholder="+44 7700 900000" value={form.phone} error={errors.phone} maxLength={MAX_LEN.phone} onChange={(v) => handleChange('phone', v)}/>
               </div>
 
               
@@ -267,10 +344,24 @@ z-20
                     Describe Your Needs
                   </span>
                 </label>
-                <textarea rows={4} value={form.message} onChange={(e) => handleChange('message', e.target.value)} placeholder="Tell us about your current security challenges, recent incidents, upcoming compliance requirements, or anything else relevant..." className={`w-full bg-[#0b1522] border rounded-lg px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#06b6d4]/40 focus:bg-[#06b6d4]/[0.03] transition-all resize-none ${errors.message ? 'border-red-500/50' : 'border-white/10'}`}/>
-                {errors.message && (<p className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
-                    <AlertCircle size={11}/> {errors.message}
-                  </p>)}
+                <textarea
+                  rows={4}
+                  value={form.message}
+                  maxLength={MAX_LEN.message}
+                  onChange={(e) => handleChange('message', e.target.value)}
+                  placeholder="Tell us about your current security challenges, recent incidents, upcoming compliance requirements, or anything else relevant..."
+                  className={`w-full bg-[#0b1522] border rounded-lg px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#06b6d4]/40 focus:bg-[#06b6d4]/[0.03] transition-all resize-none ${errors.message ? 'border-red-500/50' : 'border-white/10'}`}
+                />
+                <div className="flex items-center justify-between mt-1.5">
+                  {errors.message ? (
+                    <p className="text-xs text-red-400 flex items-center gap-1">
+                      <AlertCircle size={11}/> {errors.message}
+                    </p>
+                  ) : <span />}
+                  <span className="text-[10px] text-gray-600">
+                    {form.message.length}/{MAX_LEN.message}
+                  </span>
+                </div>
               </div>
 
               <button type="submit" disabled={loading} className="w-full flex items-center justify-center gap-2 py-4 bg-[#00FF99] text-[#0f172a] font-bold rounded-lg hover:bg-[#00FF99]/90 transition-all hover:shadow-lg hover:shadow-[#00FF99]/20 active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed">
@@ -296,7 +387,8 @@ z-20
       </div>
     </main>);
 }
-function Field({ icon: Icon, label, type = 'text', placeholder, value, error, onChange }) {
+
+function Field({ icon: Icon, label, type = 'text', placeholder, value, error, maxLength, onChange }) {
     return (<div>
       <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
         <span className="flex items-center gap-1.5">
@@ -305,14 +397,19 @@ function Field({ icon: Icon, label, type = 'text', placeholder, value, error, on
         </span>
       </label>
       <input
-  type={type}
-  value={value}
-  onChange={(e) => onChange(e.target.value)}
-  maxLength={type === "tel" ? 10 : undefined}
-  inputMode={type === "tel" ? "numeric" : undefined}
-  className="..."
-  placeholder={placeholder}
-/>
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        maxLength={maxLength}
+        inputMode={type === "tel" ? "numeric" : undefined}
+        autoComplete={
+          type === "email" ? "email" :
+          type === "tel" ? "tel" :
+          "off"
+        }
+        className={`w-full bg-[#0b1522] border rounded-lg px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#06b6d4]/40 focus:bg-[#06b6d4]/[0.03] transition-all ${error ? 'border-red-500/50' : 'border-white/10'}`}
+        placeholder={placeholder}
+      />
       {error && (<p className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
           <AlertCircle size={11}/> {error}
         </p>)}
