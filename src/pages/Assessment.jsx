@@ -116,7 +116,7 @@ export default function Assessment() {
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#06b6d4]/20 bg-[#06b6d4]/5 text-[#06b6d4] text-xs font-mono mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#00FF99]/20 bg-[#06b6d4]/5 text-[#00FF99] text-xs font-mono mb-6">
             <Shield size={11}/>
             FREE — NO COMMITMENT
           </div>
@@ -227,7 +227,7 @@ z-20
                   </p>)}
               </div>
 
-              <button type="submit" disabled={loading} className="w-full flex items-center justify-center gap-2 py-4 bg-[#06b6d4] text-[#0f172a] font-bold rounded-lg hover:bg-[#06b6d4]/90 transition-all hover:shadow-lg hover:shadow-[#06b6d4]/20 active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed">
+              <button type="submit" disabled={loading} className="w-full flex items-center justify-center gap-2 py-4 bg-[#00FF99] text-[#0f172a] font-bold rounded-lg hover:bg-[#00FF99]/90 transition-all hover:shadow-lg hover:shadow-[#00FF99]/20 active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed">
                 {loading ? (<>
                     <Loader2 size={16} className="animate-spin"/>
                     Submitting...
