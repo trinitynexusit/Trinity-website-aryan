@@ -171,25 +171,9 @@ From Offensive Red Teaming to GRC Compliance, We Secure Enterprises That Can't A
 
   <TerminalFeed />
 
-  <div className="absolute -bottom-6 -left-6 px-4 py-3 rounded-xl bg-[#0f172a] border border-[#06b6d4]/20 shadow-xl">
-  <div className="text-xs text-gray-500">
-    MTTR
-  </div>
+  
 
-  <div className="text-lg font-bold text-[#00ff99]">
-    &lt; 4 hrs
-  </div>
-</div>
-
-  <div className="absolute -top-4 -right-4 px-3 py-2 rounded-lg bg-[#0f172a] border border-blue-400/20 shadow-xl">
-    <div className="text-xs text-gray-500">
-      Threats blocked today
-    </div>
-
-    <div className="text-base font-bold text-[#00ff99]">
-      12,847
-    </div>
-  </div>
+  
 
 </div>
                 
