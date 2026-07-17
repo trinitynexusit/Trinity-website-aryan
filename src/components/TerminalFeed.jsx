@@ -38,6 +38,7 @@ export default function TerminalFeed() {
   const [updatedAt, setUpdatedAt] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
   const pollRef = useRef(null);
+  const listRef = useRef(null);
 
   const fetchThreats = useCallback(async (manual = false) => {
     if (manual) setRefreshing(true);
@@ -52,6 +53,9 @@ export default function TerminalFeed() {
       setStats(data.stats || { total: 0, critical: 0, high: 0 });
       setStatus('live');
       setUpdatedAt(new Date());
+      if (listRef.current) {
+        listRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     } catch (err) {
       setStatus('error');
       console.error('[CTI] fetch failed:', err.message);
@@ -65,6 +69,39 @@ export default function TerminalFeed() {
     pollRef.current = setInterval(fetchThreats, POLL_INTERVAL);
     return () => clearInterval(pollRef.current);
   }, [fetchThreats]);
+
+  useEffect(() => {
+    if (listRef.current) listRef.current.scrollTop = 0;
+  }, [activeTab]);
+
+  // ── Slow continuous auto-scroll, pauses on hover ─────────────────
+  const isHoveringRef = useRef(false);
+  const rafRef = useRef(null);
+
+  useEffect(() => {
+    const el = listRef.current;
+    if (!el) return;
+
+    let lastTime = performance.now();
+    const SPEED = 12; // px per second
+
+    function step(now) {
+      const dt = (now - lastTime) / 1000;
+      lastTime = now;
+
+      if (!isHoveringRef.current && el.scrollHeight > el.clientHeight) {
+        el.scrollTop += SPEED * dt;
+        // Loop back to top once we hit the bottom
+        if (el.scrollTop + el.clientHeight >= el.scrollHeight - 1) {
+          el.scrollTop = 0;
+        }
+      }
+      rafRef.current = requestAnimationFrame(step);
+    }
+
+    rafRef.current = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [activeTab, list.length]);
 
   const blacklist = events.filter(e => e.type === 'BOTNET_C2' || e.type === 'MALWARE_URL');
   const cves = events.filter(e => e.type === 'EXPLOITED_CVE' || e.type === 'NEW_CVE');
@@ -138,7 +175,11 @@ export default function TerminalFeed() {
       </div>
 
       {/* List */}
-      <div className="h-[400px] overflow-y-auto p-3 space-y-1.5 scrollbar-thin">
+      <div
+        ref={listRef}
+        onMouseEnter={() => { isHoveringRef.current = true; }}
+        onMouseLeave={() => { isHoveringRef.current = false; }}
+        className="h-[400px] overflow-y-auto p-3 space-y-1.5 scrollbar-thin">
         {list.length === 0 && status === 'connecting' && (
           <div className="text-gray-600 p-2">Connecting to threat feeds…</div>
         )}
