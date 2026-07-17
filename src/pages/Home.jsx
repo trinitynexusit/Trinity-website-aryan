@@ -167,7 +167,7 @@ From Offensive Red Teaming to GRC Compliance, We Secure Enterprises That Can't A
             
            <div className="relative order-2 mt-8 lg:mt-0">
 
-  <div className="absolute -inset-4 bg-[#06b6d4]/5 rounded-2xl blur-2xl" />
+  <div className="absolute -inset-4 bg-[#06b6d4]/5 rounded-2xl blur-2xl pointer-events-none" />
 
   <TerminalFeed />
 
