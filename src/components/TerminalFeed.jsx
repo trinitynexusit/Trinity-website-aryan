@@ -3,7 +3,7 @@ import { Terminal } from 'lucide-react';
 
 // ── CONFIG ──────────────────────────────────────────────────────────
 // Set this to your deployed Cloudflare Worker URL (from cloudflare-worker.js)
-const WORKER_URL = 'https://tnx-cti.YOUR_SUBDOMAIN.workers.dev';
+const WORKER_URL = 'https://tnx-cti.trinitynexus-it.workers.dev';
 const POLL_INTERVAL = 45 * 1000; // 45s — matches worker cache
 const MAX_LOGS = 30;
 
