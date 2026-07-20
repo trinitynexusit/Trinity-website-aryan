@@ -49,6 +49,13 @@ export default function TerminalFeed() {
       });
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       const data = await resp.json();
+      console.table(
+  data.events.map(e => ({
+    type: e.type,
+    title: e.title,
+    source: e.source
+  }))
+);
       setEvents(data.events || []);
       setStats(data.stats || { total: 0, critical: 0, high: 0 });
       setStatus('live');
