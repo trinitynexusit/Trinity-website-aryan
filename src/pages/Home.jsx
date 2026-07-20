@@ -169,7 +169,7 @@ From Offensive Red Teaming to GRC Compliance, We Secure Enterprises That Can't A
 
   <div className="absolute -inset-4 bg-[#06b6d4]/5 rounded-2xl blur-2xl pointer-events-none" />
 
-  <TerminalFeed />
+   <TerminalFeed /> 
 
   
 

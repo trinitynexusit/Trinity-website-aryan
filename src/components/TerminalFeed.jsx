@@ -64,6 +64,10 @@ export default function TerminalFeed() {
     }
   }, []);
 
+const blacklist = events.filter(e => e.type === 'BOTNET_C2' || e.type === 'MALWARE_URL');
+  const cves = events.filter(e => e.type === 'EXPLOITED_CVE' || e.type === 'NEW_CVE');
+  const list = activeTab === 'feed' ? events : activeTab === 'blacklist' ? blacklist : cves;
+
   useEffect(() => {
     fetchThreats();
     pollRef.current = setInterval(fetchThreats, POLL_INTERVAL);
@@ -103,9 +107,7 @@ export default function TerminalFeed() {
     return () => cancelAnimationFrame(rafRef.current);
   }, [activeTab, list.length]);
 
-  const blacklist = events.filter(e => e.type === 'BOTNET_C2' || e.type === 'MALWARE_URL');
-  const cves = events.filter(e => e.type === 'EXPLOITED_CVE' || e.type === 'NEW_CVE');
-  const list = activeTab === 'feed' ? events : activeTab === 'blacklist' ? blacklist : cves;
+  
 
   const critCount = list.filter(e => e.severity === 'CRITICAL').length;
   const highCount = list.filter(e => e.severity === 'HIGH').length;
