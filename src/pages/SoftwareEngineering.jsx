@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import ServiceTabs from "../components/ServiceTabs";
 export default function NetworkSecurity() {
+  const navigate = useNavigate();
   
   
     return (
@@ -105,9 +107,12 @@ export default function NetworkSecurity() {
 
    <div className="flex flex-wrap gap-5 mb-20">
 
-  <button className="bg-[#00F5A0] hover:bg-[#00d98b] transition text-black font-semibold px-8 py-4 rounded-lg">
-    ⚡ Get Free Assessment
-  </button>
+  <button
+  onClick={() => navigate("/assessment", { replace: false })}
+  className="bg-[#00F5A0] hover:bg-[#00d98b] transition text-black font-semibold px-8 py-4 rounded-lg"
+>
+   Get Free Assessment
+</button>
 
   <button className="border border-cyan-800 text-[#00F5A0] hover:bg-[#00F5A0] hover:text-black transition px-8 py-4 rounded-lg font-semibold">
     ← All Domains
@@ -174,7 +179,7 @@ export default function NetworkSecurity() {
 
       <div>
 
-        <div className="bg-[#0b1a2a] border border-cyan-900 rounded-2xl p-8">
+       <div className="relative z-10 bg-[#0b1a2a] border border-cyan-900 rounded-2xl p-8">
 
           <p className="uppercase tracking-[5px] text-xs text-gray-500 mb-8">
             At A Glance
@@ -214,9 +219,12 @@ export default function NetworkSecurity() {
             </div>
           ))}
 
-          <button className="w-full mt-8 bg-[#00F5A0] hover:bg-[#00d98b] transition text-black font-semibold py-4 rounded-lg">
-            Enquire Now →
-          </button>
+         <button
+  onClick={() => navigate("/assessment", { replace: false })}
+  className="relative z-20 w-full mt-8 bg-[#00F5A0] hover:bg-[#00d98b] transition text-black font-semibold py-4 rounded-lg"
+>
+  Enquire Now →
+</button>
 
         </div>
 
@@ -712,9 +720,12 @@ export default function NetworkSecurity() {
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
 
-        <button className="px-7 py-3 rounded-lg bg-[#00F5A0] text-black font-semibold hover:bg-[#00d98d] transition">
-           Start Free Assessment
-        </button>
+        <button
+  onClick={() => navigate("/assessment", { replace: false })}
+  className="px-7 py-3 rounded-lg bg-[#00F5A0] text-black font-semibold hover:bg-[#00d98d] transition"
+>
+  Start Free Assessment
+</button>
 
         <button className="px-7 py-3 rounded-lg border border-cyan-900 text-[#00F5A0] hover:bg-cyan-900/20 transition">
           ← All Services

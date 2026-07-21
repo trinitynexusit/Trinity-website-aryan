@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import ServiceTabs from "../components/ServiceTabs";
 export default function NetworkSecurity() {
+   const navigate = useNavigate();
+
   return (
   <>
     <ServiceTabs />
@@ -98,9 +101,12 @@ export default function NetworkSecurity() {
 
     <div className="flex flex-wrap gap-5 mt-12">
 
-      <button className="px-8 py-4 rounded-xl bg-[#00ff99] text-black font-semibold hover:scale-105 transition">
-        Get Free Assessment
-      </button>
+      <button
+  onClick={() => navigate("/assessment")}
+  className="px-8 py-4 rounded-xl bg-[#00ff99] text-black font-semibold hover:scale-105 transition"
+>
+  Get Free Assessment
+</button>
 
       <button className="px-8 py-4 rounded-xl border border-cyan-900 text-[#00ff99] hover:bg-[#00ff99]/10 transition">
         ← All Domains
@@ -179,9 +185,12 @@ export default function NetworkSecurity() {
 
       </div>
 
-      <button className="w-full mt-8 py-3 rounded-xl bg-[#00ff99] text-black font-semibold hover:scale-105 transition">
-        Enquire Now →
-      </button>
+      <button
+  onClick={() => navigate("/assessment")}
+  className="w-full mt-8 py-3 rounded-xl bg-[#00ff99] text-black font-semibold hover:scale-105 transition"
+>
+  Enquire Now →
+</button>
 
     </div>
 
@@ -529,12 +538,12 @@ export default function NetworkSecurity() {
 
     <div className="flex flex-wrap justify-center gap-5">
 
-      <a
-        href="/assessment"
-        className="px-8 py-3 rounded-xl bg-[#00ff99] text-black font-semibold hover:scale-105 transition"
-      >
-        ⚡ Start Free Assessment
-      </a>
+     <button
+  onClick={() => navigate("/assessment")}
+  className="px-8 py-3 rounded-xl bg-[#00ff99] text-black font-semibold hover:scale-105 transition"
+>
+   Start Free Assessment
+</button>
 
       <a
         href="/services"

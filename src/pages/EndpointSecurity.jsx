@@ -1,7 +1,9 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import ServiceTabs from "../components/ServiceTabs";
 
 const EndpointSecurity = () => {
+  const navigate = useNavigate();
  return (
   <>
     <ServiceTabs />
@@ -101,9 +103,12 @@ const EndpointSecurity = () => {
     {/* Buttons */}
     <div className="flex gap-5 mt-10">
 
-      <button className="px-6 py-3  bg-[#00ff99] text-black rounded-lg font-bold text-lg hover:bg-[#00ffaa] transition">
-         Get Free Assessment
-      </button>
+      <button
+  onClick={() => navigate("/assessment")}
+  className="px-6 py-3 bg-[#00ff99] text-black rounded-lg font-bold text-lg hover:bg-[#00ffaa] transition"
+>
+  Get Free Assessment
+</button>
 
       <button className="px-6 py-3  border border-[#00ff99]/30 text-[#00ff99] rounded-lg font-bold text-lg hover:bg-[#00ff99]/10 transition">
         ← All Domains
@@ -236,9 +241,12 @@ const EndpointSecurity = () => {
 
         </div>
 
-        <button className="w-full mt-10 py-4 rounded-lg bg-[#00ff99] text-black font-bold text-xl hover:bg-[#00e68a] transition">
-          Enquire Now →
-        </button>
+       <button
+  onClick={() => navigate("/assessment")}
+  className="w-full mt-10 py-4 rounded-lg bg-[#00ff99] text-black font-bold text-xl hover:bg-[#00e68a] transition"
+>
+  Enquire Now →
+</button>
 
       </div>
 
@@ -821,9 +829,12 @@ text-center">
 
       <div className="flex flex-wrap justify-center gap-4">
 
-        <button className="bg-[#20f2a2] hover:bg-[#14e28f] text-black font-bold px-10 py-4 rounded-lg text-xl transition-all duration-300">
-         Start Free Assessment
-        </button>
+        <button
+  onClick={() => navigate("/assessment")}
+  className="bg-[#20f2a2] hover:bg-[#14e28f] text-black font-bold px-10 py-4 rounded-lg text-xl transition-all duration-300"
+>
+  Start Free Assessment
+</button>
 
         <button className="border border-cyan-800 text-[#20f2a2] hover:bg-[#20f2a2] hover:text-black font-semibold px-10 py-4 rounded-lg text-xl transition-all duration-300">
           ← All Services

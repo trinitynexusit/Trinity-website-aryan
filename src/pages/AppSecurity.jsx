@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import ServiceTabs from "../components/ServiceTabs";
 export default function NetworkSecurity() {
+  const navigate = useNavigate();
+  
  return (
   <>
     <ServiceTabs />
@@ -84,9 +87,12 @@ export default function NetworkSecurity() {
 
    <div className="flex gap-5 mt-12 mb-20">
 
-      <button className="bg-emerald-400 text-black font-semibold px-8 py-3 rounded-lg hover:bg-emerald-300 transition">
-        Get Free Assessment
-      </button>
+      <button
+  onClick={() => navigate("/assessment")}
+  className="bg-emerald-400 text-black font-semibold px-8 py-3 rounded-lg hover:bg-emerald-300 transition"
+>
+  Get Free Assessment
+</button>
 
       <button className="border border-emerald-500 text-emerald-400 px-8 py-3 rounded-lg hover:bg-emerald-500 hover:text-black transition">
         ← All Domains
@@ -189,9 +195,12 @@ export default function NetworkSecurity() {
 
         </div>
 
-        <button className="w-full mt-8 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">
-          Enquire Now →
-        </button>
+        <button
+  onClick={() => navigate("/assessment")}
+  className="w-full mt-8 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition"
+>
+  Enquire Now →
+</button>
 
       </div>
 
@@ -847,9 +856,12 @@ Review solution architecture against OWASP ASVS Level 2/3, NIST and security des
 
       <div className="flex flex-wrap justify-center gap-5">
 
-        <button className="bg-emerald-400 hover:bg-emerald-300 text-black font-semibold px-10 py-4 rounded-lg transition">
-          Start Free Assessment
-        </button>
+        <button
+  onClick={() => navigate("/assessment")}
+  className="bg-emerald-400 hover:bg-emerald-300 text-black font-semibold px-10 py-4 rounded-lg transition"
+>
+  Start Free Assessment
+</button>
 
         <button className="border border-cyan-800 text-emerald-400 hover:bg-cyan-950 px-10 py-4 rounded-lg transition">
           ← All Services

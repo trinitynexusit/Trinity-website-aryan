@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
 Flame,
 Globe,
@@ -112,6 +112,7 @@ const services = [
 ];
 
 export default function NetworkSecurity() {
+  const navigate = useNavigate();
 
     useEffect(() => {
   AOS.init({
@@ -191,9 +192,12 @@ export default function NetworkSecurity() {
 
         <div className="flex gap-5 mt-12">
 
-          <button className="bg-[#00ff99] text-black px-8 py-4 rounded-lg font-semibold hover:scale-105 transition">
-            ⚡ Get Free Assessment
-          </button>
+          <button
+  onClick={() => navigate("/assessment")}
+  className="bg-[#00ff99] text-black px-8 py-4 rounded-lg font-semibold hover:scale-105 transition"
+>
+  Get Free Assessment
+</button>
 
           <Link
             to="/"
@@ -292,9 +296,12 @@ export default function NetworkSecurity() {
 
       </div>
 
-      <button className="w-full mt-10 bg-[#00ff99] text-black font-bold py-4 rounded-lg hover:scale-105 transition">
-        Enquire Now →
-      </button>
+      <button
+  onClick={() => navigate("/assessment")}
+  className="w-full mt-10 bg-[#00ff99] text-black font-bold py-4 rounded-lg hover:scale-105 transition"
+>
+  Enquire Now →
+</button>
 
     </div>
 
@@ -708,9 +715,12 @@ className="bg-[#091b2d] border border-[#00ff99]/20 rounded-xl p-6 max-w-5xl tran
 
     <div className="flex justify-center gap-4 mt-8">
 
-      <button className="bg-[#00ff99] text-black font-bold px-10 py-4 rounded-lg hover:scale-105 transition">
-         Start Free Assessment
-      </button>
+      <button
+  onClick={() => navigate("/assessment")}
+  className="bg-[#00ff99] text-black font-bold px-10 py-4 rounded-lg hover:scale-105 transition"
+>
+  Start Free Assessment
+</button>
 
       <Link
         to="/"

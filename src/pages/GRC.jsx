@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import ServiceTabs from "../components/ServiceTabs";
 export default function NetworkSecurity() {
+  const navigate = useNavigate();
+
 return (
   <>
     <ServiceTabs />
@@ -95,9 +98,12 @@ return (
     {/* Buttons */}
     <div className="flex flex-wrap gap-5">
 
-      <button className="px-8 py-4 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">
-        ⚡ Get Free Assessment
-      </button>
+      <button
+  onClick={() => navigate("/assessment")}
+  className="px-8 py-4 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition"
+>
+   Get Free Assessment
+</button>
 
       <button className="px-8 py-4 rounded-lg border border-cyan-700 text-emerald-400 hover:bg-emerald-400 hover:text-black transition">
         ← All Domains
@@ -201,9 +207,12 @@ return (
 
         </div>
 
-        <button className="w-full mt-8 bg-emerald-400 hover:bg-emerald-300 transition rounded-lg py-4 font-semibold text-black">
-          Enquire Now →
-        </button>
+        <button
+  onClick={() => navigate("/assessment")}
+  className="w-full mt-8 bg-emerald-400 hover:bg-emerald-300 transition rounded-lg py-4 font-semibold text-black"
+>
+  Enquire Now →
+</button>
 
       </div>
 

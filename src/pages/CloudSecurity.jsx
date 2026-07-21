@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import ServiceTabs from "../components/ServiceTabs";
 export default function CloudSecurity() {
+  const navigate = useNavigate();
   return (
   <>
     <ServiceTabs />
@@ -87,9 +89,12 @@ export default function CloudSecurity() {
 
     <div className="flex flex-wrap gap-5 mt-10">
 
-      <button className="px-8 py-4 rounded-lg bg-[#00ff99] text-black font-bold hover:opacity-90 transition">
-        Get Free Assessment
-      </button>
+      <button
+  onClick={() => navigate("/assessment")}
+  className="px-8 py-4 rounded-lg bg-[#00ff99] text-black font-bold hover:opacity-90 transition"
+>
+  Get Free Assessment
+</button>
 
       <button className="px-8 py-4 rounded-lg border border-[#00ff99]/30 text-[#00ff99] hover:bg-[#00ff99]/10 transition">
         ← All Domains
@@ -176,9 +181,12 @@ export default function CloudSecurity() {
         </div>
       ))}
 
-      <button className="mt-6 w-full py-3 rounded-lg bg-[#00ff99] text-black font-semibold hover:opacity-90 transition">
-        Enquire Now →
-      </button>
+      <button
+  onClick={() => navigate("/assessment")}
+  className="mt-6 w-full py-3 rounded-lg bg-[#00ff99] text-black font-semibold hover:opacity-90 transition"
+>
+  Enquire Now →
+</button>
 
     </div>
 
@@ -589,9 +597,12 @@ export default function CloudSecurity() {
 
     <div className="flex flex-wrap justify-center gap-4">
 
-      <button className="px-8 py-4 rounded-xl bg-[#00ff99] text-black font-semibold hover:scale-105 transition">
-        Start Free Assessment
-      </button>
+     <button
+  onClick={() => navigate("/assessment")}
+  className="px-8 py-4 rounded-xl bg-[#00ff99] text-black font-semibold hover:scale-105 transition"
+>
+  Start Free Assessment
+</button>
 
       <button className="px-8 py-4 rounded-xl border border-cyan-900 text-[#00ff99] hover:bg-[#00ff99]/10 transition">
         ← All Services

@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import ServiceTabs from "../components/ServiceTabs";
 export default function EmergingSecurity() {
+  const navigate = useNavigate();
+
   return (
     <>
       <ServiceTabs />
@@ -90,9 +93,12 @@ export default function EmergingSecurity() {
 
     <div className="flex flex-wrap gap-5">
 
-      <button className="bg-emerald-400 hover:bg-emerald-500 transition text-black font-semibold px-7 py-3 rounded-lg">
-         Get Free Assessment
-      </button>
+      <button
+  onClick={() => navigate("/assessment", { replace: false })}
+  className="bg-emerald-400 hover:bg-emerald-500 transition text-black font-semibold px-7 py-3 rounded-lg"
+>
+  Get Free Assessment
+</button>
 
       <button className="border border-cyan-800 text-emerald-400 hover:bg-cyan-900/20 transition px-7 py-3 rounded-lg font-semibold">
         ← All Domains
@@ -155,7 +161,7 @@ export default function EmergingSecurity() {
 
       {/* RIGHT */}
 
-      <div className="bg-[#0d1b2d] border border-cyan-900/40 rounded-xl p-6">
+      <div className="relative z-10 bg-[#0d1b2d] border border-cyan-900/40 rounded-xl p-6">
 
         <p className="text-gray-500 uppercase tracking-[5px] text-xs mb-6">
           At a Glance
@@ -182,9 +188,12 @@ export default function EmergingSecurity() {
           </div>
         ))}
 
-        <button className="mt-8 w-full bg-emerald-400 hover:bg-emerald-500 transition text-black font-semibold py-3 rounded-lg">
-          Enquire Now →
-        </button>
+        <button
+  onClick={() => navigate("/assessment", { replace: false })}
+  className="relative z-20 mt-8 w-full bg-emerald-400 hover:bg-emerald-500 transition text-black font-semibold py-3 rounded-lg"
+>
+  Enquire Now →
+</button>
 
       </div>
 
@@ -663,9 +672,12 @@ export default function EmergingSecurity() {
 
       <div className="flex flex-col sm:flex-row justify-center gap-5">
 
-        <button className="bg-[#00F5A0] hover:bg-[#00d98b] transition text-black font-semibold px-8 py-4 rounded-lg">
-          Start Free Assessment
-        </button>
+        <button
+  onClick={() => navigate("/assessment", { replace: false })}
+  className="bg-[#00F5A0] hover:bg-[#00d98b] transition text-black font-semibold px-8 py-4 rounded-lg"
+>
+  Start Free Assessment
+</button>
 
         <button className="border border-cyan-800 text-[#00F5A0] hover:bg-[#00F5A0] hover:text-black transition px-8 py-4 rounded-lg font-semibold">
           ← All Services

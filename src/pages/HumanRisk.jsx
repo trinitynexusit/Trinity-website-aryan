@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import ServiceTabs from "../components/ServiceTabs";
 export default function HumanRisk() {
+  const navigate = useNavigate();
+
   return (
     
     <main className="min-h-screen bg-[#081522] text-white">
@@ -116,9 +119,12 @@ export default function HumanRisk() {
 
           <div className="flex gap-5">
 
-            <button className="bg-[#00ff99] text-black font-semibold px-8 py-3 rounded-md hover:bg-emerald-300 transition">
-              Get Free Assessment
-            </button>
+           <button
+  onClick={() => navigate("/assessment")}
+  className="bg-[#00ff99] text-black font-semibold px-8 py-3 rounded-md hover:bg-emerald-300 transition"
+>
+  Get Free Assessment
+</button>
 
             <button className="border border-cyan-700 text-[#00ff99] font-semibold px-8 py-3 rounded-md hover:bg-[#00ff99] hover:text-black transition">
               ← All Domains
@@ -176,7 +182,7 @@ export default function HumanRisk() {
 
     {/* Right Card */}
 
-    <div className="rounded-2xl border border-cyan-900/40 bg-[#0b1728] p-8">
+    <div className="relative z-10 rounded-2xl border border-cyan-900/40 bg-[#0b1728] p-8">
 
       <p className="uppercase tracking-[4px] text-xs text-gray-500 mb-8">
         AT A GLANCE
@@ -221,9 +227,12 @@ export default function HumanRisk() {
 
       </div>
 
-      <button className="w-full mt-8 py-3 rounded-lg bg-[#00ff99] text-black font-semibold hover:bg-emerald-400 transition">
-        Enquire Now →
-      </button>
+      <button
+  onClick={() => navigate("/assessment")}
+  className="relative z-20 w-full mt-8 py-3 rounded-lg bg-[#00ff99] text-black font-semibold hover:bg-emerald-400 transition"
+>
+  Enquire Now →
+</button>
 
     </div>
 
@@ -643,9 +652,15 @@ export default function HumanRisk() {
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
 
-        <button className="px-8 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">
-          Start Free Assessment
-        </button>
+       <button
+  onClick={() => {
+    alert("Start clicked");
+    navigate("/assessment");
+  }}
+  className="relative z-50 px-8 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition"
+>
+  Start Free Assessment
+</button>
 
         <button className="px-8 py-3 rounded-lg border border-cyan-700 text-emerald-400 hover:bg-emerald-400 hover:text-black transition">
           ← All Services

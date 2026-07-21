@@ -1,3 +1,11 @@
+async function measure(name, fn) {
+  const start = Date.now();
+  const result = await fn();
+  console.log(`${name}: ${Date.now() - start} ms`);
+  return result;
+}
+
+
 async function fetchCISA() {
   try {
     const res = await fetch(
@@ -204,10 +212,19 @@ export default {
 
     // ---------- API ----------
     if (url.pathname === "/api/threats") {
+      const cache = caches.default;
 
-     const cisa = await fetchCISA();
-const nvd = await fetchNVD();
-const threatfox = await fetchThreatFox(env);
+let cached = await cache.match(request);
+
+if (cached) {
+  return cached;
+}
+
+    const [cisa, nvd, threatfox] = await Promise.all([
+  measure("CISA", fetchCISA),
+  measure("NVD", fetchNVD),
+  measure("ThreatFox", () => fetchThreatFox(env))
+]);
 
 const events = [
   ...cisa,
@@ -224,20 +241,27 @@ console.log("NVD:", nvd.length);
 console.log("ThreatFox:", threatfox.length);
 console.log("Total Events:", events.length);
 
-      return new Response(
-        JSON.stringify({
-          updated: new Date().toISOString(),
-          stats: {
-            total: events.length,
-            critical: events.filter(e => e.severity === "CRITICAL").length,
-            high: events.filter(e => e.severity === "HIGH").length
-          },
-          events: events.slice(0, 50)
-        }),
-        {
-          headers: corsHeaders
-        }
-      );
+      const response = new Response(
+  JSON.stringify({
+    updated: new Date().toISOString(),
+    stats: {
+      total: events.length,
+      critical: events.filter(e => e.severity === "CRITICAL").length,
+      high: events.filter(e => e.severity === "HIGH").length
+    },
+    events: events.slice(0, 50)
+  }),
+  {
+    headers: {
+      ...corsHeaders,
+      "Cache-Control": "public, max-age=60"
+    }
+  }
+);
+
+ctx.waitUntil(cache.put(request, response.clone()));
+
+return response;
     }
 
     return new Response(

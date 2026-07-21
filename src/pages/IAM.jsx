@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import ServiceTabs from "../components/ServiceTabs";
 export default function NetworkSecurity() {
+  const navigate = useNavigate();
  return (
   <>
     <ServiceTabs />
@@ -99,9 +101,12 @@ ZERO TRUST
 
     <div className="flex flex-wrap gap-5">
 
-      <button className="w-full sm:w-auto bg-emerald-400 hover:bg-emerald-300 text-black font-semibold px-6 sm:px-10 py-4 rounded-lg transition">
-        Get Free Assessment
-      </button>
+      <button
+  onClick={() => navigate("/assessment")}
+  className="w-full sm:w-auto bg-emerald-400 hover:bg-emerald-300 text-black font-semibold px-6 sm:px-10 py-4 rounded-lg transition"
+>
+  Get Free Assessment
+</button>
 
       <button className="border border-cyan-800 hover:bg-cyan-950 text-emerald-400 px-10 py-4 rounded-lg transition">
         ← All Domains
@@ -225,9 +230,12 @@ ZERO TRUST
 
         </div>
 
-        <button className="w-full mt-8 bg-emerald-400 hover:bg-emerald-300 text-black font-semibold py-4 rounded-lg transition">
-          Enquire Now →
-        </button>
+        <button
+  onClick={() => navigate("/assessment")}
+  className="w-full mt-8 bg-emerald-400 hover:bg-emerald-300 text-black font-semibold py-4 rounded-lg transition"
+>
+  Enquire Now →
+</button>
 
       </div>
 
@@ -953,9 +961,12 @@ Review password policy against NIST SP 800-63B. Length over complexity, breached
 
       <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
 
-        <button className="w-full sm:w-auto bg-emerald-400 hover:bg-emerald-300 text-black font-semibold px-6 sm:px-10 py-4 rounded-lg transition">
-           Start Free Assessment
-        </button>
+        <button
+  onClick={() => navigate("/assessment")}
+  className="w-full sm:w-auto bg-emerald-400 hover:bg-emerald-300 text-black font-semibold px-6 sm:px-10 py-4 rounded-lg transition"
+>
+  Start Free Assessment
+</button>
 
         <button className="w-full sm:w-auto border border-cyan-900 hover:border-emerald-400 text-emerald-400 px-6 sm:px-10 py-4 rounded-lg font-semibold transition">
           ← All Services

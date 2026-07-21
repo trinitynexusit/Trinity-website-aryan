@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 import ServiceTabs from "../components/ServiceTabs";
 export default function NetworkSecurity() {
+  const navigate = useNavigate();
 
   const deliverySteps = [
     {
@@ -215,9 +217,12 @@ export default function NetworkSecurity() {
     {/* Buttons */}
     <div className="flex flex-wrap gap-5">
 
-      <button className="px-8 py-4 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">
-        Get Free Assessment
-      </button>
+      <button
+  onClick={() => navigate("/assessment")}
+  className="px-8 py-4 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition"
+>
+  Get Free Assessment
+</button>
 
       <button className="px-8 py-4 rounded-lg border border-cyan-700 text-emerald-400 hover:bg-emerald-400 hover:text-black transition">
         ← All Domains
@@ -291,7 +296,7 @@ export default function NetworkSecurity() {
 
       {/* Right Card */}
 
-      <div className="rounded-2xl border border-cyan-900/30 bg-[#0b1627] p-8">
+      <div className="relative z-10 rounded-2xl border border-cyan-900/30 bg-[#0b1627] p-8">
 
         <p className="uppercase tracking-[5px] text-xs text-gray-500 mb-8">
           At A Glance
@@ -333,9 +338,12 @@ export default function NetworkSecurity() {
           </div>
         ))}
 
-        <button className="mt-8 w-full rounded-lg bg-emerald-400 text-black py-4 font-semibold hover:bg-emerald-300 transition">
-          Enquire Now →
-        </button>
+<button
+  onClick={() => navigate("/assessment")}
+  className="mt-8 w-full rounded-lg bg-emerald-400 text-black py-4 font-semibold hover:bg-emerald-300 transition"
+>
+  Enquire Now →
+</button>
 
       </div>
 
@@ -676,9 +684,12 @@ export default function NetworkSecurity() {
 
       <div className="flex flex-wrap justify-center gap-4">
 
-        <button className="px-8 py-4 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">
-          Start Free Assessment
-        </button>
+        <button
+  onClick={() => navigate("/assessment")}
+  className="px-8 py-4 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition"
+>
+  Start Free Assessment
+</button>
 
         <button className="px-8 py-4 rounded-lg border border-cyan-700 text-emerald-400 hover:bg-emerald-400 hover:text-black transition">
           ← All Services

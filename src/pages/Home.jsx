@@ -1,5 +1,6 @@
 import SpecialistsSection from "../components/SpecialistsSection";
 import SecurityBulletinSection from "../components/SecurityBulletinSection";
+
 import { Link } from 'react-router-dom';
 import SOCSection from "../components/SOCSectionTemp";
 import {
@@ -12,6 +13,10 @@ import {
   Lock,
   ArrowRight,
   CheckCircle2,
+  Building2,
+HeartPulse,
+Monitor,
+Landmark,
   Globe,
   Shield,
   Laptop,
@@ -456,7 +461,12 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
 
       {/* BFSI */}
       <div className="p-4 rounded-2xl border border-[#00ff99]/15 bg-[#061321] hover:border-[#00ff99]/40 transition-all">
-        <div className="text-5xl mb-6">🏢</div>
+        <div className="mb-6">
+  <Building2
+    size={52}
+    className="text-[#00ff99] drop-shadow-[0_0_10px_rgba(0,255,153,0.5)]"
+  />
+</div>
 
         <h3 className="text-white font-bold text-2xl mb-5">
           BFSI
@@ -477,7 +487,12 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
 
       {/* Healthcare */}
       <div className="p-4 rounded-2xl border border-[#00ff99]/15 bg-[#061321] hover:border-[#00ff99]/40 transition-all">
-        <div className="text-5xl mb-6">🏥</div>
+        <div className="mb-6">
+  <HeartPulse
+    size={52}
+    className="text-[#00ff99] drop-shadow-[0_0_10px_rgba(0,255,153,0.5)]"
+  />
+</div>
 
         <h3 className="text-white font-bold text-2xl mb-5">
           HEALTHCARE
@@ -497,7 +512,12 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
 
       {/* IT */}
       <div className="p-4 rounded-2xl border border-[#00ff99]/15 bg-[#061321] hover:border-[#00ff99]/40 transition-all">
-        <div className="text-5xl mb-6">💻</div>
+        <div className="mb-6">
+  <Monitor
+  size={52}
+  className="text-[#00ff99] drop-shadow-[0_0_10px_rgba(0,255,153,0.5)]"
+/>
+</div>
 
         <h3 className="text-white font-bold text-2xl mb-5">
           IT / ITES / SAAS
@@ -518,7 +538,12 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
 
       {/* Government */}
       <div className="p-4 rounded-2xl border border-[#00ff99]/15 bg-[#061321] hover:border-[#00ff99]/40 transition-all">
-        <div className="text-5xl mb-6">🏛️</div>
+        <div className="mb-6">
+  <Landmark
+    size={52}
+    className="text-[#00ff99] drop-shadow-[0_0_10px_rgba(0,255,153,0.5)]"
+  />
+</div>
 
         <h3 className="text-white font-bold text-2xl mb-5">
           GOVERNMENT & PSUS

@@ -65,7 +65,11 @@ export default function SOCSection() {
                 <span>Compliance Status</span>
                 <span className="text-[#00ff99]">ISO Aligned</span>
               </div>
+              <p className="mt-3 text-right text-[11px] text-gray-500 italic">
+  * For illustrative purposes only; not actual client data.
+</p>
             </div>
+            
           </div>
 
         </div>
