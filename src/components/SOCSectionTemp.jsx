@@ -115,7 +115,9 @@ export default function SOCSection() {
         &lt;4 HOURS
       </span>
     </div>
-
+<p className="mt-5 text-center text-xs text-gray-500 italic">
+  *For illustrative purposes only; not actual client data.
+</p>
   </div>
 
 </div>
