@@ -57,7 +57,7 @@ function MatrixGridBackgroundImpl() {
   });
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none blur-[3px]" aria-hidden="true">
       {/* static grid lines */}
       <div
         className="absolute inset-0 opacity-[0.12]"
@@ -287,9 +287,9 @@ const isBlacklist = activeTab === "blacklist";
       return (
         <div
           key={evt.id || evt.indicator}
-          className="rounded-lg border border-[#17ff5c]/20 bg-[#08131d]/55 p-1.5 hover:border-[#39ff6a]/40 transition text-center"
+          className="rounded-lg border border-[#17ff5c]/20 bg-[#08131d]/55 p-1.5 hover:border-[#39ff6a]/40 transition text-left"
         >
-          <div className="flex flex-wrap justify-center gap-1.5 mb-1">
+          <div className="flex flex-wrap items-center justify-start gap-1.5 mb-1">
             <span className="px-1.5 py-0.5 rounded bg-[#39ff6a]/15 text-[#39ff6a] text-[9px] font-semibold">
               {evt.indicator}
             </span>
@@ -303,6 +303,8 @@ const isBlacklist = activeTab === "blacklist";
             <span className="px-1.5 py-0.5 rounded bg-[#ff1a2b]/15 text-[#ff1a2b] text-[9px] drop-shadow-[0_0_5px_#ff1a2b]">
               {evt.source}
             </span>
+
+            <span className="text-gray-600 text-[9px]">{timeAgo(evt.timestamp)}</span>
           </div>
 
           <div className="text-white font-semibold text-[0.7rem] leading-4">
@@ -311,12 +313,6 @@ const isBlacklist = activeTab === "blacklist";
 
           <div className="mt-1 text-gray-500 text-[9px]">
             {evt.vendor || "Unknown Vendor"}
-          </div>
-
-          <div className="mt-1 flex justify-center gap-2 text-[9px] text-gray-500">
-            <span>{timeAgo(evt.timestamp)}</span>
-            <span>•</span>
-            <span className="text-[#ff1a2b] drop-shadow-[0_0_4px_#ff1a2b]">{evt.source}</span>
           </div>
         </div>
       );
@@ -386,10 +382,10 @@ const isBlacklist = activeTab === "blacklist";
         href={evt.reference || undefined}
         target={evt.reference ? "_blank" : undefined}
         rel="noopener"
-        className="block rounded-md border-l-2 px-2 py-1.5 hover:bg-white/5 transition-colors text-center"
+        className="block rounded-md border-l-2 px-2 py-1.5 hover:bg-white/5 transition-colors text-left"
         style={{ borderLeftColor: "currentColor" }}
       >
-        <div className={`flex flex-wrap items-center justify-center gap-1.5 ${sev.text}`}>
+        <div className={`flex flex-wrap items-center justify-start gap-1.5 ${sev.text}`}>
           <span
             className={`px-1 py-0.5 rounded text-[0.55rem] font-bold ${sev.bg} ring-1 ${sev.ring} ${sev.glow || ''}`}
           >
@@ -400,15 +396,21 @@ const isBlacklist = activeTab === "blacklist";
             {evt.source}
           </span>
 
-          {evt.cvss && (
-            <span className="text-gray-500 text-[0.58rem]">
-              CVSS {evt.cvss}
-            </span>
-          )}
-
           {evt.country_flag && (
             <span className="text-[0.7rem]">
               {evt.country_flag}
+            </span>
+          )}
+
+          {evt.indicator && (
+            <span className="px-1.5 py-0.5 rounded bg-[#39ff6a]/10 border border-[#39ff6a]/20 text-[#8bffb0] text-[9px]">
+              {evt.iocType || "IOC"} &nbsp; {evt.indicator}
+            </span>
+          )}
+
+          {evt.cvss && (
+            <span className="px-1.5 py-0.5 rounded bg-[#ff1a2b]/10 border border-[#ff1a2b]/30 text-[#ff1a2b] text-[9px] drop-shadow-[0_0_4px_#ff1a2b]">
+              CVSS {evt.cvss}
             </span>
           )}
 
@@ -422,21 +424,7 @@ const isBlacklist = activeTab === "blacklist";
             {evt.title}
           </div>
 
-          <div className="mt-1 flex flex-wrap justify-center gap-1.5">
-            {evt.indicator && (
-              <span className="px-1.5 py-0.5 rounded bg-[#39ff6a]/10 border border-[#39ff6a]/20 text-[#8bffb0] text-[9px]">
-                {evt.iocType || "IOC"} &nbsp; {evt.indicator}
-              </span>
-            )}
-
-            {evt.cvss && (
-              <span className="px-1.5 py-0.5 rounded bg-[#ff1a2b]/10 border border-[#ff1a2b]/30 text-[#ff1a2b] text-[9px] drop-shadow-[0_0_4px_#ff1a2b]">
-                CVSS {evt.cvss}
-              </span>
-            )}
-          </div>
-
-          <div className="mt-1 flex items-center justify-center gap-1.5 flex-wrap text-[9px] text-gray-500">
+          <div className="mt-1 flex items-center justify-start gap-1.5 flex-wrap text-[9px] text-gray-500">
             {evt.vendor && <span>{evt.vendor}</span>}
 
             {evt.country && (
