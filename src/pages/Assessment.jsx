@@ -52,7 +52,8 @@ function sanitize(value, maxLen) {
 }
 
 // RFC5322-ish practical email regex (stricter than a bare "has an @ and a dot")
-const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+const EMAIL_REGEX =
+/^[A-Za-z0-9._-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+$/;
 
 // Accepts 10-digit numbers, optionally with a leading country code (+xx / 00xx)
 const PHONE_REGEX = /^\d{10}$/;
@@ -119,6 +120,11 @@ export default function Assessment() {
         if (field === "name") {
             value = value.replace(/[^A-Za-z ]/g, "").slice(0, MAX_LEN.name);
         }
+        if (field === "email") {
+    value = value
+        .replace(/[^A-Za-z0-9@._-]/g, "") // Sirf ye characters allow
+        .replace(/@(?=.*@)/g, "");        // Sirf ek @ allow
+}
 
         // General sanitization (XSS + SQLi + max length) for every field
         const maxLen = MAX_LEN[field];

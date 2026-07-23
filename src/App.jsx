@@ -1,6 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
+
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,8 +10,8 @@ const Home = lazy(() => import('./pages/Home'));
 const Services = lazy(() => import('./pages/Services'));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 const Assessment = lazy(() => import('./pages/Assessment'));
-const Auth = lazy(() => import('./pages/Auth'));
-const Admin = lazy(() => import('./pages/Admin'));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
 const About = lazy(() => import('./pages/About'));
 const NetworkSecurity = lazy(() => import('./pages/NetworkSecurity'));
 const EndpointSecurity = lazy(() => import('./pages/EndpointSecurity'));
@@ -34,7 +34,7 @@ function PageLoader() {
     </div>);
 }
 export default function App() {
-    return (<AuthProvider>
+  return (
       <BrowserRouter>
       <ScrollToTop />
         <Navbar />
@@ -51,8 +51,8 @@ export default function App() {
             <Route path="/services/:id" element={<ServiceDetail />}/>
             <Route path="/about" element={<About />} />
             <Route path="/assessment" element={<Assessment />}/>
-            <Route path="/auth" element={<Auth />}/>
-            <Route path="/admin" element={<Admin />}/>
+            
+            
             <Route path="/network-security" element={<NetworkSecurity />} />
             
 <Route path="/endpoint-security" element={<EndpointSecurity />} />
@@ -66,10 +66,10 @@ export default function App() {
 <Route path="/vciso" element={<VCISO />} />
 <Route path="/emerging-security" element={<EmergingSecurity />} />
 <Route path="/software-engineering" element={<SoftwareEngineering />} />
-
+<Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
         <Footer />
       </BrowserRouter>
-    </AuthProvider>);
+  );
 }

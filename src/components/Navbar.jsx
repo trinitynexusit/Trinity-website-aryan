@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { Menu, X, ChevronRight } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
+
 const menuItems = [
   { title: "Home", path: "/" },
 
@@ -73,7 +73,7 @@ export default function Navbar() {
     const [servicesOpen, setServicesOpen] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
-    const { user, logout } = useAuth();
+    
     const handleScroll = (id) => {
   if (location.pathname !== "/") {
     navigate("/");
@@ -99,10 +99,7 @@ export default function Navbar() {
     useEffect(() => {
         setOpen(false);
     }, [location]);
-    const handleLogout = () => {
-        logout();
-        navigate('/');
-    };
+    
     return (<header
   className="fixed top-0 left-0 right-0 z-50 bg-[#081420] border-b border-white/10"
 >
@@ -295,31 +292,7 @@ export default function Navbar() {
 </button>
 
           
-         <div className="hidden lg:flex items-center gap-3">
-  {user && (
-    <div className="flex items-center gap-3">
-      {user.role === 'admin' && (
-        <Link
-          to="/admin"
-          className="text-sm text-gray-400 hover:text-white transition-colors"
-        >
-          Admin
-        </Link>
-      )}
-
-      <span className="text-sm text-gray-500">
-        {user.email}
-      </span>
-
-      <button
-        onClick={handleLogout}
-        className="text-sm text-gray-400 hover:text-white transition-colors"
-      >
-        Logout
-      </button>
-    </div>
-  )}
-</div>
+         
   
            
           
@@ -372,25 +345,8 @@ export default function Navbar() {
 >
   About
 </Link>
-            {user && (
-  <div className="pt-3 border-t border-white/5 space-y-2">
-    {user.role === "admin" && (
-      <Link
-        to="/admin"
-        className="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg"
-      >
-        Admin Dashboard
-      </Link>
-    )}
+           
 
-    <button
-      onClick={handleLogout}
-      className="block w-full text-left px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-white/5 rounded-lg"
-    >
-      Logout
-    </button>
-  </div>
-)}
           </div>
         </div>
         )}

@@ -710,10 +710,10 @@ className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#061321] border bord
       </Link>
 
       <a
-        href="mailto:connect@trinitynexus.org"
+        href="mailto:connect@trinitynexustech.com"
         className="px-6 py-2 rounded-lg border border-[#00ff99]/20 bg-[#061321] text-[#00ff99] font-bold text-xl"
       >
-        ✉ connect@trinitynexus.org
+        ✉ connect@trinitynexustech.com
       </a>
 
     </div>

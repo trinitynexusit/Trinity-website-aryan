@@ -67,9 +67,9 @@ const goToClients = () => {
               financial institutions, and high-value targets across 12 security domains.
             </p>
             <div className="space-y-2.5">
-              <a href="mailto:connect@trinitynexus.org" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#06b6d4] transition-colors">
+              <a href="mailto:connect@trinitynexustech.com" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#06b6d4] transition-colors">
                 <Mail size={14}/>
-                connect@trinitynexus.org
+                connect@trinitynexustech.com
               </a>
               <span className="flex items-start gap-2 text-sm text-gray-500">
   <MapPin size={14} className="mt-0.5 flex-shrink-0" />
